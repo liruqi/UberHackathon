@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4D04FEAFC0A82BCDD4E8AD95 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F63F88D99E99F3AF7EA96D8 /* libPods.a */; };
+		550FC7391C4A7B6C00AB8A31 /* UBHViewSpot.m in Sources */ = {isa = PBXBuildFile; fileRef = 550FC7381C4A7B6C00AB8A31 /* UBHViewSpot.m */; };
+		550FC73B1C4A7DD300AB8A31 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550FC73A1C4A7DD300AB8A31 /* CoreLocation.framework */; };
 		9A779D421C4A25070030B002 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A779D271C4A25070030B002 /* AppDelegate.m */; };
 		9A779D431C4A25070030B002 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A779D281C4A25070030B002 /* LaunchScreen.xib */; };
 		9A779D441C4A25070030B002 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A779D2A1C4A25070030B002 /* Main.storyboard */; };
@@ -37,6 +39,9 @@
 
 /* Begin PBXFileReference section */
 		1F63F88D99E99F3AF7EA96D8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		550FC7371C4A7B6C00AB8A31 /* UBHViewSpot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBHViewSpot.h; sourceTree = "<group>"; };
+		550FC7381C4A7B6C00AB8A31 /* UBHViewSpot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBHViewSpot.m; sourceTree = "<group>"; };
+		550FC73A1C4A7DD300AB8A31 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7A0C30D53F8D17AAE8152C73 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9A779D261C4A25070030B002 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9A779D271C4A25070030B002 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -84,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				550FC73B1C4A7DD300AB8A31 /* CoreLocation.framework in Frameworks */,
 				4D04FEAFC0A82BCDD4E8AD95 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,6 +104,22 @@
 				C02E8BEB552629FF609070AE /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		550FC7351C4A649D00AB8A31 /* Trip */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Trip;
+			sourceTree = "<group>";
+		};
+		550FC7361C4A7B0F00AB8A31 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				550FC7371C4A7B6C00AB8A31 /* UBHViewSpot.h */,
+				550FC7381C4A7B6C00AB8A31 /* UBHViewSpot.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9A779D251C4A25070030B002 /* UberHackathon */ = {
@@ -119,6 +141,8 @@
 		9A779D2C1C4A25070030B002 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				550FC7361C4A7B0F00AB8A31 /* Model */,
+				550FC7351C4A649D00AB8A31 /* Trip */,
 				9AECA5051C4A55C90079C93E /* SelectAttractions */,
 				9AECA4FA1C4A3FEB0079C93E /* Login */,
 				9A779D2D1C4A25070030B002 /* Home */,
@@ -261,6 +285,7 @@
 		F64EB5C0CB8A346C26B2C764 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				550FC73A1C4A7DD300AB8A31 /* CoreLocation.framework */,
 				1F63F88D99E99F3AF7EA96D8 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -406,6 +431,7 @@
 				9AECA5191C4A55C90079C93E /* CitySelectTableViewController.m in Sources */,
 				9A779D471C4A25070030B002 /* CYLMessageViewController.m in Sources */,
 				9A779D4A1C4A25070030B002 /* CYLSameFityViewController.m in Sources */,
+				550FC7391C4A7B6C00AB8A31 /* UBHViewSpot.m in Sources */,
 				9A779D451C4A25070030B002 /* CYLHomeViewController.m in Sources */,
 				9A779D4D1C4A25070030B002 /* main.m in Sources */,
 				9A779D421C4A25070030B002 /* AppDelegate.m in Sources */,

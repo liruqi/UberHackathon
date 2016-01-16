@@ -12,6 +12,9 @@
 #import <AVOSCloud/AVUser.h>
 #import "CYLDeallocBlockExecutor.h"
 
+static float kSetoff = 500;
+static float kYoffset = 200;
+
 typedef NS_ENUM(NSUInteger, buttonDirection) {
     buttonLeft = 0,
     buttonRight,
@@ -55,8 +58,8 @@ const NSString *rightButtonSignupAction = @"cancelClick";
 @property (nonatomic) currentStatus status;
 
 @property (nonatomic) AVPlayer *player;
-@property (weak, nonatomic) IBOutlet UIView *playerView;
 
+@property (strong, nonatomic) IBOutlet UIView *playerView;
 
 @end
 
@@ -65,7 +68,6 @@ const NSString *rightButtonSignupAction = @"cancelClick";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.status = freeStatus;
-    
     [self createVideoPlayer];
     [self createTitleLabel];
     [self createTwoButton];
@@ -96,6 +98,24 @@ const NSString *rightButtonSignupAction = @"cancelClick";
     [self.titleLabel.layer addAnimation:keyAnim forKey:@"opacity"];
 }
 
+/**
+ *  lazy load playerView
+ *
+ *  @return UIView
+ */
+- (UIView *)playerView {
+    if (_playerView == nil) {
+        _playerView = [[UIView alloc] init];
+        //GCC的C扩充功能Code Block Evaluation，
+        //因为变量作用域仅仅在大括号内，利用这种方式，重复使用通用的变量名而不产生冲突
+        _playerView.frame = ({
+            CGRect frame = self.view.frame;
+            frame;
+        });
+        [self.view addSubview:_playerView];
+    }
+    return _playerView;
+}
 - (void)createVideoPlayer {
     
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"welcome_video.mp4" ofType:nil];
@@ -199,8 +219,17 @@ const NSString *rightButtonSignupAction = @"cancelClick";
 }
 
 - (void)signupClick {
-    
     [self transitionToNewStatus:signupStatus];
+}
+
+- (void)showAlert:(NSString *)text {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:text delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
+    [alert show];
+    int delayInSeconds = 1;
+    dispatch_time_t when = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(when, dispatch_get_main_queue(), ^{
+        [alert dismissWithClickedButtonIndex:0 animated:YES];
+    });
 }
 
 - (void)usernameRegister {
@@ -210,11 +239,12 @@ const NSString *rightButtonSignupAction = @"cancelClick";
     NSError *error = nil;
     [user signUp:&error];
     if (!error) {
-        //TODO:Alert
         NSLog(@"🔴类名与方法名：%@（在第%@行），描述：%@", @(__PRETTY_FUNCTION__), @(__LINE__), @"注册成功");
+        [self showAlert:@"注册成功"];
     } else {
-        //TODO:Alert
         NSLog(@"🔴类名与方法名：%@（在第%@行），描述：%@", @(__PRETTY_FUNCTION__), @(__LINE__), error);
+        [self showAlert:error.localizedDescription];
+        
     }
     
 }
@@ -223,11 +253,12 @@ const NSString *rightButtonSignupAction = @"cancelClick";
     NSError *error = nil;
     [AVUser logInWithUsername: self.cardView.username.text password:self.cardView.password.text error:&error];
     if (error) {
-        //TODO: ALert
         NSLog(@"🔴类名与方法名：%@（在第%@行），描述：%@", @(__PRETTY_FUNCTION__), @(__LINE__), error);
+        [self showAlert:error.localizedDescription];
+        
     } else {
-        //TODO: ALert
         NSLog(@"🔴类名与方法名：%@（在第%@行），描述：%@", @(__PRETTY_FUNCTION__), @(__LINE__), @"登陆成功");
+        [self showAlert:@"登陆成功"];
         self.completionBlock ? self.completionBlock() : nil;
     }
 }
@@ -241,7 +272,6 @@ const NSString *rightButtonSignupAction = @"cancelClick";
     } else {
         [self usernameRegister];
     }
-    NSLog(@"%@成功 %@ %@",self.status == 1 ? @"登陆":@"注册", self.cardView.username.text, self.cardView.password.text);
     [self transitionToNewStatus:freeStatus];
 }
 
@@ -284,7 +314,6 @@ const NSString *rightButtonSignupAction = @"cancelClick";
             break;
     }
 }
-
 #pragma mark - CardView Animation
 - (void)addCardView {
     // TODO: 修改为弹性动画
@@ -295,7 +324,7 @@ const NSString *rightButtonSignupAction = @"cancelClick";
 
 - (void)showCardView {
     [UIView animateWithDuration:1.0 animations:^{
-        CGPoint center = CGPointMake(self.cardView.center.x, self.cardView.center.y + 500);
+        CGPoint center = CGPointMake(self.cardView.center.x, self.cardView.center.y + kSetoff);
         self.cardView.center = center;
     }];
 }
@@ -303,7 +332,7 @@ const NSString *rightButtonSignupAction = @"cancelClick";
 - (void)hideCardView {
     self.cardView.username.text = self.cardView.password.text = @"";
     [UIView animateWithDuration:0.3 animations:^{
-        CGPoint center = CGPointMake(self.cardView.center.x, self.cardView.center.y - 500);
+        CGPoint center = CGPointMake(self.cardView.center.x, self.cardView.center.y - kSetoff);
         self.cardView.center = center;
     }];
 }

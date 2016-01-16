@@ -5,6 +5,7 @@
 //  Copyright 2011年 __MyCompanyName__. All rights reserved.
 //
 
+#import "UBAttractionsViewController.h"
 #import "CityListViewController.h"
 #import "CitySelectTableViewController.h"
 #import "HotCityTableViewCell.h"
@@ -185,12 +186,16 @@
 
 - (void)didSelectCityWithName:(NSString *)cityName {
     [self.delegete didSelectCityWithName:cityName];
+    
+//    UBAttractionsTableViewController *attractionsTableVC = [[UBAttractionsTableViewController alloc] init];
+//    UITabBarController *tempController = (UITabBarController *)self.view.window.rootViewController;
+//    [self.navigationController pushViewController:attractionsTableVC animated:YES];
 }
 
 - (void)didSelectHotCity:(NSString *)cityName {
-    [self dismissViewControllerAnimated:YES completion:^{
-        [self.delegete didSelectCityWithName:cityName];
-    }];
+    
+    UBAttractionsViewController *attractionsTableVC = [[UBAttractionsViewController alloc] init];
+    [self.navigationController pushViewController:attractionsTableVC animated:YES];
 }
 
 @end

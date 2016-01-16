@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XHSetting.h"
 
-@interface CYLMineViewController : UITableViewController
+@interface CYLMineViewController : XHSetting
+
+@property (nonatomic, strong) NSDictionary *settingDictionary;
 
 @end

@@ -6,6 +6,7 @@
 //  Copyright © 2015年 sunkai. All rights reserved.
 //
 
+#import "UBAttractionsViewController.h"
 #import "CitySelectTableViewController.h"
 
 @interface CitySelectTableViewController ()
@@ -117,9 +118,8 @@
 
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self dismissViewControllerAnimated:YES completion:^{
-        [self.delegete didSelectCityWithName:[tableView cellForRowAtIndexPath:indexPath].textLabel.text];
-    }];
+    UBAttractionsViewController *attractionsTableVC = [[UBAttractionsViewController alloc] init];
+    [self.navigationController pushViewController:attractionsTableVC animated:YES];
 }
 
 

@@ -30,8 +30,8 @@
 
 // Table cells
 #import "JBParallaxCell.h"
-
-@interface UBAttractionsViewController () <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate>
+static NSString* kCITYNAME = @"kCITYNAME";
+@interface UBAttractionsViewController () <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate, CityListDelegate>
 
 @property (nonatomic, strong) NSArray *tableItems;
 @property (nonatomic, strong) UITableView *tableView;
@@ -64,8 +64,13 @@
     [self.tableView setDataSource:self];
     
     [self.view addSubview:self.tableView];
-
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"北京" style:UIBarButtonItemStylePlain target:self action:@selector(onChangeCity:)];
+    NSString* cityName = [[NSUserDefaults standardUserDefaults] stringForKey:kCITYNAME];
+    if (! cityName || cityName.length == 0) {
+        cityName = @"北京";
+    }
+    self.title = cityName;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"切换城市" style:UIBarButtonItemStylePlain target:self action:@selector(onChangeCity:)];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -78,6 +83,12 @@
     CityListViewController *cityListVC = [[CityListViewController alloc] init];
     UINavigationController *naviVC = [[UINavigationController alloc] initWithRootViewController:cityListVC];
     [self.tabBarController presentViewController:naviVC animated:YES completion:nil];
+}
+
+- (void)didSelectCityWithName: (NSString*) name {
+    self.title = name;
+    [[NSUserDefaults standardUserDefaults] setObject:name forKey:kCITYNAME];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)didReceiveMemoryWarning
@@ -127,7 +138,7 @@
 {
     // Get visible cells on table view.
     NSArray *visibleCells = [self.tableView visibleCells];
-
+    
     for (JBParallaxCell *cell in visibleCells) {
         [cell cellOnTableView:self.tableView didScrollOnView:self.view];
     }

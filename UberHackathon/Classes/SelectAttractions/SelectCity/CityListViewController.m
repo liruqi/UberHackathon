@@ -5,12 +5,11 @@
 //  Copyright 2011年 __MyCompanyName__. All rights reserved.
 //
 
-#import "UBAttractionsViewController.h"
 #import "CityListViewController.h"
 #import "CitySelectTableViewController.h"
 #import "HotCityTableViewCell.h"
 
-@interface CityListViewController ()<UITableViewDelegate, UITableViewDataSource, CitySelectDelegate, HotCityCellDelegate, UINavigationBarDelegate>
+@interface CityListViewController ()<UITableViewDelegate, UITableViewDataSource, CitySelectDelegate, HotCityCellDelegate>
 
 @property (strong,nonatomic) NSMutableArray  *dataList;
 @property (strong,nonatomic) NSMutableArray  *searchList;
@@ -27,7 +26,7 @@
 {
     self = [super init];
     if (self) {
-
+        
     }
     return self;
 }
@@ -50,15 +49,15 @@
 {
     [super viewDidLoad];
     
-//    UINavigationBar *naviBar = [[UINavigationBar alloc] init];
+    //    UINavigationBar *naviBar = [[UINavigationBar alloc] init];
     [self setTitle:@"选择省份"];
     
     self.view.backgroundColor = [UIColor clearColor];
-
+    
     NSString *path=[[NSBundle mainBundle] pathForResource:@"provincedictionary"
-                                                   ofType:@"plist"]; 
-    self.cities = [[NSDictionary alloc]   
-                        initWithContentsOfFile:path];
+                                                   ofType:@"plist"];
+    self.cities = [[NSDictionary alloc]
+                   initWithContentsOfFile:path];
     
     self.keys = [[cities allKeys] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         NSUInteger len0 = [(NSString *)obj1 length];
@@ -94,24 +93,24 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-//    if (self.searchController.active) {
-//        return 1;
-//    }else {
-        // Return the number of sections.
-        return [keys count];
-//    }
+    //    if (self.searchController.active) {
+    //        return 1;
+    //    }else {
+    // Return the number of sections.
+    return [keys count];
+    //    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//    if (self.searchController.active) {
-//        return self.searchList.count;
-//    }else {
-        // Return the number of rows in the section.
-        NSString *key = [keys objectAtIndex:section];  
-        NSArray *citySection = [cities objectForKey:key];
-        return [citySection count];
-//    }
+    //    if (self.searchController.active) {
+    //        return self.searchList.count;
+    //    }else {
+    // Return the number of rows in the section.
+    NSString *key = [keys objectAtIndex:section];
+    NSArray *citySection = [cities objectForKey:key];
+    return [citySection count];
+    //    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -124,8 +123,8 @@
         cell.delegate = self;
         return cell;
     } else {
-    
-    
+        
+        
         static NSString *CellIdentifier = @"Cell";
         
         NSString *key = [keys objectAtIndex:indexPath.section];
@@ -134,13 +133,13 @@
         if (cell == nil) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
-//        if (self.searchController.active) {
-//            [cell.textLabel setText:self.searchList[indexPath.row]];
-//        } else {
-            // Configure the cell...
-            cell.selectionStyle =UITableViewCellSelectionStyleNone;
-            cell.textLabel.text = [[cities objectForKey:key] objectAtIndex:indexPath.row];
-//        }
+        //        if (self.searchController.active) {
+        //            [cell.textLabel setText:self.searchList[indexPath.row]];
+        //        } else {
+        // Configure the cell...
+        cell.selectionStyle =UITableViewCellSelectionStyleNone;
+        cell.textLabel.text = [[cities objectForKey:key] objectAtIndex:indexPath.row];
+        //        }
         return cell;
     }
     
@@ -148,20 +147,20 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     NSString *key = [keys objectAtIndex:section];
-    return key;  
+    return key;
 }
 
 
 -(void)updateSearchResultsForSearchController:(UISearchController *)searchController {
-//    NSString *searchString = [self.searchController.searchBar text];
-//    NSPredicate *preicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", searchString];
-//    if (self.searchList!= nil) {
-//        [self.searchList removeAllObjects];
-//    }
-//    //过滤数据
-//    self.searchList= [NSMutableArray arrayWithArray:[_dataList filteredArrayUsingPredicate:preicate]];
-//    //刷新表格
-//    [self.tableView reloadData];
+    //    NSString *searchString = [self.searchController.searchBar text];
+    //    NSPredicate *preicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", searchString];
+    //    if (self.searchList!= nil) {
+    //        [self.searchList removeAllObjects];
+    //    }
+    //    //过滤数据
+    //    self.searchList= [NSMutableArray arrayWithArray:[_dataList filteredArrayUsingPredicate:preicate]];
+    //    //刷新表格
+    //    [self.tableView reloadData];
 }
 
 #pragma mark - Table view delegate
@@ -179,23 +178,23 @@
     CitySelectTableViewController *tablevc = [[CitySelectTableViewController alloc] init];
     tablevc.provinceName = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
     tablevc.delegete = self;
-//    [self pushViewController:tablevc animated:YES];
-//    [self presentViewController:tablevc animated:YES completion:nil];
+    //    [self pushViewController:tablevc animated:YES];
+    //    [self presentViewController:tablevc animated:YES completion:nil];
     [self.navigationController pushViewController:tablevc animated:YES];
 }
 
 - (void)didSelectCityWithName:(NSString *)cityName {
     [self.delegete didSelectCityWithName:cityName];
     
-//    UBAttractionsTableViewController *attractionsTableVC = [[UBAttractionsTableViewController alloc] init];
-//    UITabBarController *tempController = (UITabBarController *)self.view.window.rootViewController;
-//    [self.navigationController pushViewController:attractionsTableVC animated:YES];
+    //    UBAttractionsTableViewController *attractionsTableVC = [[UBAttractionsTableViewController alloc] init];
+    //    UITabBarController *tempController = (UITabBarController *)self.view.window.rootViewController;
+    //    [self.navigationController pushViewController:attractionsTableVC animated:YES];
 }
 
 - (void)didSelectHotCity:(NSString *)cityName {
-    
-    UBAttractionsViewController *attractionsTableVC = [[UBAttractionsViewController alloc] init];
-    [self.navigationController pushViewController:attractionsTableVC animated:YES];
+    [self dismissViewControllerAnimated:YES completion:^{
+        [self.delegete didSelectCityWithName:cityName];
+    }];
 }
 
 @end

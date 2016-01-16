@@ -12,6 +12,9 @@
 #import <AVOSCloud/AVUser.h>
 #import "CYLDeallocBlockExecutor.h"
 
+static float kSetoff = 500;
+static float kYoffset = 200;
+
 typedef NS_ENUM(NSUInteger, buttonDirection) {
     buttonLeft = 0,
     buttonRight,
@@ -55,8 +58,8 @@ const NSString *rightButtonSignupAction = @"cancelClick";
 @property (nonatomic) currentStatus status;
 
 @property (nonatomic) AVPlayer *player;
-@property (weak, nonatomic) IBOutlet UIView *playerView;
 
+@property (strong, nonatomic) IBOutlet UIView *playerView;
 
 @end
 
@@ -96,6 +99,24 @@ const NSString *rightButtonSignupAction = @"cancelClick";
     [self.titleLabel.layer addAnimation:keyAnim forKey:@"opacity"];
 }
 
+/**
+ *  lazy load playerView
+ *
+ *  @return UIView
+ */
+- (UIView *)playerView {
+    if (_playerView == nil) {
+        _playerView = [[UIView alloc] init];
+//GCC的C扩充功能Code Block Evaluation，
+        //因为变量作用域仅仅在大括号内，利用这种方式，重复使用通用的变量名而不产生冲突
+        _playerView.frame = ({
+            CGRect frame = self.view.frame;
+            frame;
+        });
+        [self.view addSubview:_playerView];
+    }
+    return _playerView;
+}
 - (void)createVideoPlayer {
     
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"welcome_video.mp4" ofType:nil];
@@ -199,7 +220,6 @@ const NSString *rightButtonSignupAction = @"cancelClick";
 }
 
 - (void)signupClick {
-    
     [self transitionToNewStatus:signupStatus];
 }
 
@@ -284,7 +304,6 @@ const NSString *rightButtonSignupAction = @"cancelClick";
             break;
     }
 }
-
 #pragma mark - CardView Animation
 - (void)addCardView {
     // TODO: 修改为弹性动画
@@ -295,7 +314,7 @@ const NSString *rightButtonSignupAction = @"cancelClick";
 
 - (void)showCardView {
     [UIView animateWithDuration:1.0 animations:^{
-        CGPoint center = CGPointMake(self.cardView.center.x, self.cardView.center.y + 500);
+        CGPoint center = CGPointMake(self.cardView.center.x, self.cardView.center.y + kSetoff);
         self.cardView.center = center;
     }];
 }
@@ -303,7 +322,7 @@ const NSString *rightButtonSignupAction = @"cancelClick";
 - (void)hideCardView {
     self.cardView.username.text = self.cardView.password.text = @"";
     [UIView animateWithDuration:0.3 animations:^{
-        CGPoint center = CGPointMake(self.cardView.center.x, self.cardView.center.y - 500);
+        CGPoint center = CGPointMake(self.cardView.center.x, self.cardView.center.y - kSetoff);
         self.cardView.center = center;
     }];
 }

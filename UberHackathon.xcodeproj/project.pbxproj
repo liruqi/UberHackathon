@@ -33,6 +33,7 @@
 		9AECA51C1C4A55C90079C93E /* HotCityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AECA5121C4A55C90079C93E /* HotCityTableViewCell.xib */; };
 		9AECA51D1C4A55C90079C93E /* provincedictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AECA5131C4A55C90079C93E /* provincedictionary.plist */; };
 		9AECA5211C4A623A0079C93E /* welcome_video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9AECA5201C4A623A0079C93E /* welcome_video.mp4 */; };
+		9AECA5231C4A6BB40079C93E /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AECA5221C4A6BB40079C93E /* Settings.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		9AECA5121C4A55C90079C93E /* HotCityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotCityTableViewCell.xib; sourceTree = "<group>"; };
 		9AECA5131C4A55C90079C93E /* provincedictionary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = provincedictionary.plist; sourceTree = "<group>"; };
 		9AECA5201C4A623A0079C93E /* welcome_video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = welcome_video.mp4; sourceTree = "<group>"; };
+		9AECA5221C4A6BB40079C93E /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
 		C02E8BEB552629FF609070AE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +111,7 @@
 				9A779D281C4A25070030B002 /* LaunchScreen.xib */,
 				9A779D2A1C4A25070030B002 /* Main.storyboard */,
 				9A779D3F1C4A25070030B002 /* Images.xcassets */,
+				9AECA5221C4A6BB40079C93E /* Settings.plist */,
 				9A779D401C4A25070030B002 /* Info.plist */,
 				9A779D411C4A25070030B002 /* main.m */,
 			);
@@ -338,6 +341,7 @@
 				9A779D431C4A25070030B002 /* LaunchScreen.xib in Resources */,
 				9AECA51D1C4A55C90079C93E /* provincedictionary.plist in Resources */,
 				9A779D441C4A25070030B002 /* Main.storyboard in Resources */,
+				9AECA5231C4A6BB40079C93E /* Settings.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -132,6 +132,7 @@ static NSString *const AVOS_APP_KEY = @"dwGilg2Kot1iH2kXCP7zIIlS";
  *  设置navigationBar样式
  */
 - (void)setUpNavigationBarAppearance {
+    [[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
     UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
     
     UIImage *backgroundImage = nil;

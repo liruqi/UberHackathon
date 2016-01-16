@@ -43,9 +43,8 @@ static NSString* kCITYNAME = @"kCITYNAME";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
-    
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-self.navigationController.navigationBar.frame.size.height) style:UITableViewStylePlain];
+    [self.tableView setContentInset:UIEdgeInsetsMake(0, 0, self.tabBarController.tabBar.frame.size.height+20, 0)];
     // Load the items in the table
     self.tableItems = @[[UIImage imageNamed:@"demo_1.jpg"],
                         [UIImage imageNamed:@"demo_2.jpg"],

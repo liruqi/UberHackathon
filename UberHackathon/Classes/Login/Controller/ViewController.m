@@ -119,7 +119,7 @@ const NSString *rightButtonSignupAction = @"cancelClick";
 }
 - (void)createVideoPlayer {
     
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"welcome_video.mp4" ofType:nil];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"welcome_video" ofType:@"m4v"];
     NSURL *url = [NSURL fileURLWithPath:filePath];
     
     AVPlayerItem *playerItem = [AVPlayerItem playerItemWithURL:url];
@@ -143,6 +143,10 @@ const NSString *rightButtonSignupAction = @"cancelClick";
     }];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moviePlayDidEnd:) name:AVPlayerItemDidPlayToEndTimeNotification object:self.player.currentItem];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moviePlayPause:) name:UIApplicationDidEnterBackgroundNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moviePlayResume:) name:UIApplicationWillEnterForegroundNotification object:nil];
 }
 
 - (void)createTitleLabel {
@@ -152,7 +156,7 @@ const NSString *rightButtonSignupAction = @"cancelClick";
     self.titleLabel.backgroundColor = [UIColor clearColor];
     self.titleLabel.text = @"优游";
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
-    self.titleLabel.textColor = [UIColor colorWithWhite:1.0 alpha:0.2];
+    self.titleLabel.textColor = [UIColor colorWithWhite:1.0 alpha:1.0f];
     self.titleLabel.font = [UIFont systemFontOfSize:TITLE_FONT_SIZE];
     [self.view addSubview:self.titleLabel];
 }
@@ -196,6 +200,14 @@ const NSString *rightButtonSignupAction = @"cancelClick";
     [self.player play];
 }
 
+- (void)moviePlayResume:(NSNotification*)notification{
+    [self.player play];
+}
+- (void)moviePlayPause:(NSNotification *)notification {
+    [self.player pause];
+
+}
+
 #pragma mark - keyboard
 // 解决键盘遮挡textfield和确认按钮,通过通知中心触发,改变相应视图frame
 - (void)keyboardWillChangeFrame:(NSNotification *)notification {
@@ -232,6 +244,7 @@ const NSString *rightButtonSignupAction = @"cancelClick";
     if (!error) {
         NSLog(@"🔴类名与方法名：%@（在第%@行），描述：%@", @(__PRETTY_FUNCTION__), @(__LINE__), @"注册成功");
         [self showSuccessAlert:@"注册成功"];
+        [self transitionToNewStatus:freeStatus];
     } else {
         NSLog(@"🔴类名与方法名：%@（在第%@行），描述：%@", @(__PRETTY_FUNCTION__), @(__LINE__), error);
         [self showErrorAlert:error.localizedDescription];
@@ -249,6 +262,7 @@ const NSString *rightButtonSignupAction = @"cancelClick";
     } else {
         NSLog(@"🔴类名与方法名：%@（在第%@行），描述：%@", @(__PRETTY_FUNCTION__), @(__LINE__), @"登陆成功");
         [self showSuccessAlert:@"登陆成功"];
+        [self transitionToNewStatus:freeStatus];
         self.completionBlock ? self.completionBlock() : nil;
     }
 }
@@ -262,7 +276,6 @@ const NSString *rightButtonSignupAction = @"cancelClick";
     } else {
         [self usernameRegister];
     }
-    [self transitionToNewStatus:freeStatus];
     [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
 
 }

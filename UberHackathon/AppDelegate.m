@@ -7,17 +7,16 @@
 //
 
 #import "AppDelegate.h"
-
 #import "CYLTabBarController.h"
-
+#import "LZAlbumVC.h"
 #import "UBAttractionsViewController.h"
 #import "CYLMessageViewController.h"
 #import "CYLMineViewController.h"
 #import "CYLSameFityViewController.h"
 //========== AVOS ============公众账号的 KKKK
 #import <AVOSCloud/AVOSCloud.h>
-static NSString *const AVOS_APP_ID = @"EdLkonU3CQ4YsQ19lsw3bI8I";
-static NSString *const AVOS_APP_KEY = @"dwGilg2Kot1iH2kXCP7zIIlS";
+static NSString *const AVOS_APP_ID = @"0y463z4tk9wk4zbtkq4qn21kshdm9zetj8mkouiqkaoovn4e";
+static NSString *const AVOS_APP_KEY = @"j9de7xoza1gbvkbp0b6qudz10s9lkwsxqll2nvwrjfty3a58";
 #import "ViewController.h"
 
 @interface AppDelegate ()
@@ -34,7 +33,11 @@ static NSString *const AVOS_APP_KEY = @"dwGilg2Kot1iH2kXCP7zIIlS";
     //设置AVOSCloud
     [AVOSCloud setApplicationId:AVOS_APP_ID
                       clientKey:AVOS_APP_KEY];
+    //希望能提供更详细的日志信息，打开日志的方式是在 AVOSCloud 初始化语句之后加上下面这句：
     
+#ifndef __OPTIMIZE__
+    [AVOSCloud setAllLogsEnabled:YES];
+#endif
 
     // 设置主窗口,并设置跟控制器
     self.window = [[UIWindow alloc]init];
@@ -70,7 +73,7 @@ static NSString *const AVOS_APP_KEY = @"dwGilg2Kot1iH2kXCP7zIIlS";
     UIViewController *firstNavigationController = [[UINavigationController alloc]
                                                    initWithRootViewController:firstViewController];
     
-    CYLSameFityViewController *secondViewController = [[CYLSameFityViewController alloc] init];
+    LZAlbumVC *secondViewController = [[LZAlbumVC alloc] init];
     UIViewController *secondNavigationController = [[UINavigationController alloc]
                                                     initWithRootViewController:secondViewController];
     
@@ -118,6 +121,7 @@ static NSString *const AVOS_APP_KEY = @"dwGilg2Kot1iH2kXCP7zIIlS";
     [self setUpNavigationBarAppearance];
     [self setUpTabBarItemTextAttributes];
 }
+
 /**
  *  设置navigationBar样式
  */

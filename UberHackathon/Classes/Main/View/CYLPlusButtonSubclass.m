@@ -6,6 +6,8 @@
 //  Copyright (c) 2015年 https://github.com/ChenYilong . All rights reserved.
 //
 
+#import "CityListViewController.h"
+
 #import "CYLPlusButtonSubclass.h"
 @interface CYLPlusButtonSubclass () {
     CGFloat _buttonImageHeight;
@@ -117,13 +119,19 @@
                                                    cancelButtonTitle:@"取消"
                                               destructiveButtonTitle:nil
                                                    otherButtonTitles:@"拍照", @"从相册选取", @"淘宝一键转卖", nil];
-    [actionSheet showInView:viewController.view];
+//    [actionSheet showInView:viewController.view];
+    
+    CityListViewController *cityListVC = [[CityListViewController alloc] init];
+    UINavigationController *naviVC = [[UINavigationController alloc] initWithRootViewController:cityListVC];
+    [tabBarController presentViewController:naviVC animated:YES completion:nil];
 }
 
 #pragma mark - UIActionSheetDelegate
 
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
     NSLog(@"buttonIndex = %ld", buttonIndex);
+    
+    
 }
 
 //+ (NSUInteger)indexOfPlusButtonInTabBar {

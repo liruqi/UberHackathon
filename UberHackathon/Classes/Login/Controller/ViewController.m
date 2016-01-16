@@ -66,8 +66,6 @@ const NSString *rightButtonSignupAction = @"cancelClick";
     [super viewDidLoad];
     self.status = freeStatus;
     
-    //注意：atomic只会确保原子性，这种操作本身还是非线程安全的，设置为本地不可变的
-
     [self createVideoPlayer];
     [self createTitleLabel];
     [self createTwoButton];
@@ -100,7 +98,7 @@ const NSString *rightButtonSignupAction = @"cancelClick";
 
 - (void)createVideoPlayer {
     
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"welcome_video" ofType:@"mp4"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"welcome_video.mp4" ofType:nil];
     NSURL *url = [NSURL fileURLWithPath:filePath];
     
     AVPlayerItem *playerItem = [AVPlayerItem playerItemWithURL:url];
@@ -131,7 +129,7 @@ const NSString *rightButtonSignupAction = @"cancelClick";
     self.titleLabel.alpha = 0.0f;
     self.titleLabel.center = self.view.center;
     self.titleLabel.backgroundColor = [UIColor clearColor];
-    self.titleLabel.text = @"UBER";
+    self.titleLabel.text = @"优游";
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.titleLabel.textColor = [UIColor colorWithWhite:1.0 alpha:0.2];
     self.titleLabel.font = [UIFont systemFontOfSize:TITLE_FONT_SIZE];

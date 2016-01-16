@@ -22,7 +22,17 @@
 		9A779D4D1C4A25070030B002 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A779D411C4A25070030B002 /* main.m */; };
 		9AECA5011C4A3FEB0079C93E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AECA4FD1C4A3FEB0079C93E /* ViewController.m */; };
 		9AECA5021C4A3FEB0079C93E /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AECA5001C4A3FEB0079C93E /* CardView.m */; };
-		9AECA5041C4A40F50079C93E /* welcome_video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9AECA5031C4A40F50079C93E /* welcome_video.mp4 */; };
+		9AECA5141C4A55C90079C93E /* citydict.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AECA5071C4A55C90079C93E /* citydict.plist */; };
+		9AECA5151C4A55C90079C93E /* citydict1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AECA5081C4A55C90079C93E /* citydict1.plist */; };
+		9AECA5161C4A55C90079C93E /* citydictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AECA5091C4A55C90079C93E /* citydictionary.plist */; };
+		9AECA5171C4A55C90079C93E /* CityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AECA50B1C4A55C90079C93E /* CityListViewController.m */; };
+		9AECA5181C4A55C90079C93E /* CityListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AECA50C1C4A55C90079C93E /* CityListViewController.xib */; };
+		9AECA5191C4A55C90079C93E /* CitySelectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AECA50E1C4A55C90079C93E /* CitySelectTableViewController.m */; };
+		9AECA51A1C4A55C90079C93E /* CitySelectTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AECA50F1C4A55C90079C93E /* CitySelectTableViewController.xib */; };
+		9AECA51B1C4A55C90079C93E /* HotCityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AECA5111C4A55C90079C93E /* HotCityTableViewCell.m */; };
+		9AECA51C1C4A55C90079C93E /* HotCityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AECA5121C4A55C90079C93E /* HotCityTableViewCell.xib */; };
+		9AECA51D1C4A55C90079C93E /* provincedictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AECA5131C4A55C90079C93E /* provincedictionary.plist */; };
+		9AECA51F1C4A57F10079C93E /* welcome_video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9AECA51E1C4A57F10079C93E /* welcome_video.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +62,20 @@
 		9AECA4FD1C4A3FEB0079C93E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9AECA4FF1C4A3FEB0079C93E /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
 		9AECA5001C4A3FEB0079C93E /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
-		9AECA5031C4A40F50079C93E /* welcome_video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = welcome_video.mp4; sourceTree = "<group>"; };
+		9AECA5071C4A55C90079C93E /* citydict.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citydict.plist; sourceTree = "<group>"; };
+		9AECA5081C4A55C90079C93E /* citydict1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citydict1.plist; sourceTree = "<group>"; };
+		9AECA5091C4A55C90079C93E /* citydictionary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citydictionary.plist; sourceTree = "<group>"; };
+		9AECA50A1C4A55C90079C93E /* CityListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityListViewController.h; sourceTree = "<group>"; };
+		9AECA50B1C4A55C90079C93E /* CityListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityListViewController.m; sourceTree = "<group>"; };
+		9AECA50C1C4A55C90079C93E /* CityListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityListViewController.xib; sourceTree = "<group>"; };
+		9AECA50D1C4A55C90079C93E /* CitySelectTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitySelectTableViewController.h; sourceTree = "<group>"; };
+		9AECA50E1C4A55C90079C93E /* CitySelectTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitySelectTableViewController.m; sourceTree = "<group>"; };
+		9AECA50F1C4A55C90079C93E /* CitySelectTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CitySelectTableViewController.xib; sourceTree = "<group>"; };
+		9AECA5101C4A55C90079C93E /* HotCityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotCityTableViewCell.h; sourceTree = "<group>"; };
+		9AECA5111C4A55C90079C93E /* HotCityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotCityTableViewCell.m; sourceTree = "<group>"; };
+		9AECA5121C4A55C90079C93E /* HotCityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotCityTableViewCell.xib; sourceTree = "<group>"; };
+		9AECA5131C4A55C90079C93E /* provincedictionary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = provincedictionary.plist; sourceTree = "<group>"; };
+		9AECA51E1C4A57F10079C93E /* welcome_video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = welcome_video.mp4; sourceTree = "<group>"; };
 		C02E8BEB552629FF609070AE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,9 +108,9 @@
 				9A779D271C4A25070030B002 /* AppDelegate.m */,
 				9A779D281C4A25070030B002 /* LaunchScreen.xib */,
 				9A779D2A1C4A25070030B002 /* Main.storyboard */,
-				9AECA5031C4A40F50079C93E /* welcome_video.mp4 */,
 				9A779D3F1C4A25070030B002 /* Images.xcassets */,
 				9A779D401C4A25070030B002 /* Info.plist */,
+				9AECA51E1C4A57F10079C93E /* welcome_video.mp4 */,
 				9A779D411C4A25070030B002 /* main.m */,
 			);
 			path = UberHackathon;
@@ -96,6 +119,7 @@
 		9A779D2C1C4A25070030B002 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9AECA5051C4A55C90079C93E /* SelectAttractions */,
 				9AECA4FA1C4A3FEB0079C93E /* Login */,
 				9A779D2D1C4A25070030B002 /* Home */,
 				9A779D301C4A25070030B002 /* Main */,
@@ -206,6 +230,34 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		9AECA5051C4A55C90079C93E /* SelectAttractions */ = {
+			isa = PBXGroup;
+			children = (
+				9AECA5061C4A55C90079C93E /* SelectCity */,
+			);
+			path = SelectAttractions;
+			sourceTree = "<group>";
+		};
+		9AECA5061C4A55C90079C93E /* SelectCity */ = {
+			isa = PBXGroup;
+			children = (
+				9AECA5071C4A55C90079C93E /* citydict.plist */,
+				9AECA5081C4A55C90079C93E /* citydict1.plist */,
+				9AECA5091C4A55C90079C93E /* citydictionary.plist */,
+				9AECA50A1C4A55C90079C93E /* CityListViewController.h */,
+				9AECA50B1C4A55C90079C93E /* CityListViewController.m */,
+				9AECA50C1C4A55C90079C93E /* CityListViewController.xib */,
+				9AECA50D1C4A55C90079C93E /* CitySelectTableViewController.h */,
+				9AECA50E1C4A55C90079C93E /* CitySelectTableViewController.m */,
+				9AECA50F1C4A55C90079C93E /* CitySelectTableViewController.xib */,
+				9AECA5101C4A55C90079C93E /* HotCityTableViewCell.h */,
+				9AECA5111C4A55C90079C93E /* HotCityTableViewCell.m */,
+				9AECA5121C4A55C90079C93E /* HotCityTableViewCell.xib */,
+				9AECA5131C4A55C90079C93E /* provincedictionary.plist */,
+			);
+			path = SelectCity;
+			sourceTree = "<group>";
+		};
 		F64EB5C0CB8A346C26B2C764 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,10 +326,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AECA5041C4A40F50079C93E /* welcome_video.mp4 in Resources */,
+				9AECA5141C4A55C90079C93E /* citydict.plist in Resources */,
 				9A779D4C1C4A25070030B002 /* Info.plist in Resources */,
 				9A779D4B1C4A25070030B002 /* Images.xcassets in Resources */,
+				9AECA5151C4A55C90079C93E /* citydict1.plist in Resources */,
+				9AECA5181C4A55C90079C93E /* CityListViewController.xib in Resources */,
+				9AECA51A1C4A55C90079C93E /* CitySelectTableViewController.xib in Resources */,
+				9AECA51F1C4A57F10079C93E /* welcome_video.mp4 in Resources */,
+				9AECA51C1C4A55C90079C93E /* HotCityTableViewCell.xib in Resources */,
+				9AECA5161C4A55C90079C93E /* citydictionary.plist in Resources */,
 				9A779D431C4A25070030B002 /* LaunchScreen.xib in Resources */,
+				9AECA51D1C4A55C90079C93E /* provincedictionary.plist in Resources */,
 				9A779D441C4A25070030B002 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,11 +396,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AECA51B1C4A55C90079C93E /* HotCityTableViewCell.m in Sources */,
+				9AECA5171C4A55C90079C93E /* CityListViewController.m in Sources */,
 				9AECA5011C4A3FEB0079C93E /* ViewController.m in Sources */,
 				9A779D461C4A25070030B002 /* CYLPlusButtonSubclass.m in Sources */,
 				9AECA5021C4A3FEB0079C93E /* CardView.m in Sources */,
 				9A779D481C4A25070030B002 /* CYLMineViewController.m in Sources */,
 				9A779D491C4A25070030B002 /* CYLDetailsViewController.m in Sources */,
+				9AECA5191C4A55C90079C93E /* CitySelectTableViewController.m in Sources */,
 				9A779D471C4A25070030B002 /* CYLMessageViewController.m in Sources */,
 				9A779D4A1C4A25070030B002 /* CYLSameFityViewController.m in Sources */,
 				9A779D451C4A25070030B002 /* CYLHomeViewController.m in Sources */,

@@ -41,6 +41,8 @@
 		9AECA5331C4A80330079C93E /* demo_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AECA52B1C4A80330079C93E /* demo_4.png */; };
 		9AECA5341C4A80330079C93E /* JBParallaxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AECA52D1C4A80330079C93E /* JBParallaxCell.m */; };
 		9AECA5351C4A80330079C93E /* UBAttractionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AECA52F1C4A80330079C93E /* UBAttractionsViewController.m */; };
+		9AECA5B31C4AA6DC0079C93E /* MBProgressHUD+KK.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AECA5B01C4AA6DC0079C93E /* MBProgressHUD+KK.m */; };
+		9AECA5B41C4AA6DC0079C93E /* MBProgressHUD+CYLAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AECA5B21C4AA6DC0079C93E /* MBProgressHUD+CYLAddition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +96,9 @@
 		9AECA52D1C4A80330079C93E /* JBParallaxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBParallaxCell.m; sourceTree = "<group>"; };
 		9AECA52E1C4A80330079C93E /* UBAttractionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBAttractionsViewController.h; sourceTree = "<group>"; };
 		9AECA52F1C4A80330079C93E /* UBAttractionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBAttractionsViewController.m; sourceTree = "<group>"; };
+		9AECA5B01C4AA6DC0079C93E /* MBProgressHUD+KK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+KK.m"; sourceTree = "<group>"; };
+		9AECA5B11C4AA6DC0079C93E /* MBProgressHUD+CYLAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+CYLAddition.h"; sourceTree = "<group>"; };
+		9AECA5B21C4AA6DC0079C93E /* MBProgressHUD+CYLAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+CYLAddition.m"; sourceTree = "<group>"; };
 		C02E8BEB552629FF609070AE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,6 +159,7 @@
 		9A779D2C1C4A25070030B002 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9AECA5AD1C4AA6DC0079C93E /* Tool */,
 				550FC7361C4A7B0F00AB8A31 /* Model */,
 				550FC7351C4A649D00AB8A31 /* Trip */,
 				9AECA5051C4A55C90079C93E /* SelectAttractions */,
@@ -310,6 +316,32 @@
 			path = Attractions;
 			sourceTree = "<group>";
 		};
+		9AECA5AD1C4AA6DC0079C93E /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				9AECA5AE1C4AA6DC0079C93E /* Category */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		9AECA5AE1C4AA6DC0079C93E /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				9AECA5AF1C4AA6DC0079C93E /* MBProgressHUD */,
+				9AECA5B11C4AA6DC0079C93E /* MBProgressHUD+CYLAddition.h */,
+				9AECA5B21C4AA6DC0079C93E /* MBProgressHUD+CYLAddition.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		9AECA5AF1C4AA6DC0079C93E /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				9AECA5B01C4AA6DC0079C93E /* MBProgressHUD+KK.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		F64EB5C0CB8A346C26B2C764 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,10 +490,12 @@
 				9AECA5341C4A80330079C93E /* JBParallaxCell.m in Sources */,
 				9AECA51B1C4A55C90079C93E /* HotCityTableViewCell.m in Sources */,
 				9AECA5171C4A55C90079C93E /* CityListViewController.m in Sources */,
+				9AECA5B31C4AA6DC0079C93E /* MBProgressHUD+KK.m in Sources */,
 				9AECA5011C4A3FEB0079C93E /* ViewController.m in Sources */,
 				9AECA5351C4A80330079C93E /* UBAttractionsViewController.m in Sources */,
 				9AECA5021C4A3FEB0079C93E /* CardView.m in Sources */,
 				9A779D481C4A25070030B002 /* CYLMineViewController.m in Sources */,
+				9AECA5B41C4AA6DC0079C93E /* MBProgressHUD+CYLAddition.m in Sources */,
 				9A779D491C4A25070030B002 /* CYLDetailsViewController.m in Sources */,
 				9AECA5191C4A55C90079C93E /* CitySelectTableViewController.m in Sources */,
 				9A779D471C4A25070030B002 /* CYLMessageViewController.m in Sources */,

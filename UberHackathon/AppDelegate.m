@@ -14,6 +14,11 @@
 #import "CYLMessageViewController.h"
 #import "CYLMineViewController.h"
 #import "CYLSameFityViewController.h"
+//========== AVOS ============公众账号的 KKKK
+#import <AVOSCloud/AVOSCloud.h>
+static NSString *const AVOS_APP_ID = @"EdLkonU3CQ4YsQ19lsw3bI8I";
+static NSString *const AVOS_APP_KEY = @"dwGilg2Kot1iH2kXCP7zIIlS";
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -24,16 +29,40 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //========== AVOS ============
     
+    //设置AVOSCloud
+    [AVOSCloud setApplicationId:AVOS_APP_ID
+                      clientKey:AVOS_APP_KEY];
+    
+
     // 设置主窗口,并设置跟控制器
     self.window = [[UIWindow alloc]init];
     self.window.frame = [UIScreen mainScreen].bounds;
-    [self setupViewControllers];
-    [self.window setRootViewController:self.tabBarController];
+    // Applications are expected to have a root view controller at the end of application launch
+    self.window.rootViewController = [[UIViewController alloc] init];
     [self.window makeKeyAndVisible];
-    [self customizeInterface];
-    
+
+    if ([AVUser currentUser]) {
+        [self toMain];
+    } else {
+        [self toLogin];
+    }
     return YES;
+}
+
+- (void)toMain {
+    [self setupViewControllers];
+    [self customizeInterface];
+    self.window.rootViewController = self.tabBarController;
+}
+
+- (void)toLogin {
+    ViewController *loginViewController = [[ViewController alloc] init];
+    loginViewController.completionBlock = ^ {
+        [self toMain];
+    };
+    [self.window setRootViewController:loginViewController];
 }
 
 - (void)setupViewControllers {

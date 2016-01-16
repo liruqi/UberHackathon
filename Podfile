@@ -3,3 +3,4 @@ pod ‘CYLTabBarController’
 pod  'AVOSCloud'
 pod  'AVOSCloudIM'
 pod  'CYLDeallocBlockExecutor'
+pod  'IQKeyboardManager'

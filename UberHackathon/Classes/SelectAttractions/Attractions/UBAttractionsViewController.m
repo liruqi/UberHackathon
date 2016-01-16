@@ -26,6 +26,7 @@
 
 
 #import "UBAttractionsViewController.h"
+#import "CityListViewController.h"
 
 // Table cells
 #import "JBParallaxCell.h"
@@ -64,13 +65,19 @@
     
     [self.view addSubview:self.tableView];
 
-
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"北京" style:UIBarButtonItemStylePlain target:self action:@selector(onChangeCity:)];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     [self scrollViewDidScroll:nil];
+}
+
+- (void)onChangeCity:(id)sender {
+    CityListViewController *cityListVC = [[CityListViewController alloc] init];
+    UINavigationController *naviVC = [[UINavigationController alloc] initWithRootViewController:cityListVC];
+    [self.tabBarController presentViewController:naviVC animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning

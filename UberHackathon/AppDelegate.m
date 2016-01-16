@@ -10,7 +10,7 @@
 
 #import "CYLTabBarController.h"
 
-#import "CYLHomeViewController.h"
+#import "UBAttractionsViewController.h"
 #import "CYLMessageViewController.h"
 #import "CYLMineViewController.h"
 #import "CYLSameFityViewController.h"
@@ -66,17 +66,13 @@ static NSString *const AVOS_APP_KEY = @"dwGilg2Kot1iH2kXCP7zIIlS";
 }
 
 - (void)setupViewControllers {
-    CYLHomeViewController *firstViewController = [[CYLHomeViewController alloc] init];
+    UBAttractionsViewController *firstViewController = [[UBAttractionsViewController alloc] init];
     UIViewController *firstNavigationController = [[UINavigationController alloc]
                                                    initWithRootViewController:firstViewController];
     
     CYLSameFityViewController *secondViewController = [[CYLSameFityViewController alloc] init];
     UIViewController *secondNavigationController = [[UINavigationController alloc]
                                                     initWithRootViewController:secondViewController];
-    
-    CYLMessageViewController *thirdViewController = [[CYLMessageViewController alloc] init];
-    UIViewController *thirdNavigationController = [[UINavigationController alloc]
-                                                   initWithRootViewController:thirdViewController];
     
     CYLMineViewController *fourthViewController = [[CYLMineViewController alloc] init];
     UIViewController *fourthNavigationController = [[UINavigationController alloc]
@@ -87,7 +83,6 @@ static NSString *const AVOS_APP_KEY = @"dwGilg2Kot1iH2kXCP7zIIlS";
     [tabBarController setViewControllers:@[
                                            firstNavigationController,
                                            secondNavigationController,
-                                           thirdNavigationController,
                                            fourthNavigationController
                                            ]];
     self.tabBarController = tabBarController;
@@ -106,21 +101,16 @@ static NSString *const AVOS_APP_KEY = @"dwGilg2Kot1iH2kXCP7zIIlS";
                             CYLTabBarItemSelectedImage : @"home_highlight",
                             };
     NSDictionary *dict2 = @{
-                            CYLTabBarItemTitle : @"同城",
+                            CYLTabBarItemTitle : @"发现",
                             CYLTabBarItemImage : @"mycity_normal",
                             CYLTabBarItemSelectedImage : @"mycity_highlight",
-                            };
-    NSDictionary *dict3 = @{
-                            CYLTabBarItemTitle : @"消息",
-                            CYLTabBarItemImage : @"message_normal",
-                            CYLTabBarItemSelectedImage : @"message_highlight",
                             };
     NSDictionary *dict4 = @{
                             CYLTabBarItemTitle : @"我的",
                             CYLTabBarItemImage : @"account_normal",
                             CYLTabBarItemSelectedImage : @"account_highlight"
                             };
-    NSArray *tabBarItemsAttributes = @[ dict1, dict2, dict3, dict4 ];
+    NSArray *tabBarItemsAttributes = @[ dict1, dict2,  dict4 ];
     tabBarController.tabBarItemsAttributes = tabBarItemsAttributes;
 }
 

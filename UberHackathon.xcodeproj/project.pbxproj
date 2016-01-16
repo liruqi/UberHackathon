@@ -14,7 +14,6 @@
 		9A779D431C4A25070030B002 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A779D281C4A25070030B002 /* LaunchScreen.xib */; };
 		9A779D441C4A25070030B002 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A779D2A1C4A25070030B002 /* Main.storyboard */; };
 		9A779D451C4A25070030B002 /* CYLHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A779D2F1C4A25070030B002 /* CYLHomeViewController.m */; };
-		9A779D461C4A25070030B002 /* CYLPlusButtonSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A779D331C4A25070030B002 /* CYLPlusButtonSubclass.m */; };
 		9A779D471C4A25070030B002 /* CYLMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A779D361C4A25070030B002 /* CYLMessageViewController.m */; };
 		9A779D481C4A25070030B002 /* CYLMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A779D391C4A25070030B002 /* CYLMineViewController.m */; };
 		9A779D491C4A25070030B002 /* CYLDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A779D3C1C4A25070030B002 /* CYLDetailsViewController.m */; };
@@ -56,8 +55,6 @@
 		9A779D2B1C4A25070030B002 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9A779D2E1C4A25070030B002 /* CYLHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLHomeViewController.h; sourceTree = "<group>"; };
 		9A779D2F1C4A25070030B002 /* CYLHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLHomeViewController.m; sourceTree = "<group>"; };
-		9A779D321C4A25070030B002 /* CYLPlusButtonSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLPlusButtonSubclass.h; sourceTree = "<group>"; };
-		9A779D331C4A25070030B002 /* CYLPlusButtonSubclass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLPlusButtonSubclass.m; sourceTree = "<group>"; };
 		9A779D351C4A25070030B002 /* CYLMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLMessageViewController.h; sourceTree = "<group>"; };
 		9A779D361C4A25070030B002 /* CYLMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLMessageViewController.m; sourceTree = "<group>"; };
 		9A779D381C4A25070030B002 /* CYLMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLMineViewController.h; sourceTree = "<group>"; };
@@ -190,8 +187,6 @@
 		9A779D311C4A25070030B002 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9A779D321C4A25070030B002 /* CYLPlusButtonSubclass.h */,
-				9A779D331C4A25070030B002 /* CYLPlusButtonSubclass.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -358,6 +353,7 @@
 				TargetAttributes = {
 					9A77A2E41BDCC144009CD1A4 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = CL7N4DE35L;
 					};
 				};
 			};
@@ -463,7 +459,6 @@
 				9AECA51B1C4A55C90079C93E /* HotCityTableViewCell.m in Sources */,
 				9AECA5171C4A55C90079C93E /* CityListViewController.m in Sources */,
 				9AECA5011C4A3FEB0079C93E /* ViewController.m in Sources */,
-				9A779D461C4A25070030B002 /* CYLPlusButtonSubclass.m in Sources */,
 				9AECA5351C4A80330079C93E /* UBAttractionsViewController.m in Sources */,
 				9AECA5021C4A3FEB0079C93E /* CardView.m in Sources */,
 				9A779D481C4A25070030B002 /* CYLMineViewController.m in Sources */,
@@ -587,9 +582,12 @@
 			baseConfigurationReference = 7A0C30D53F8D17AAE8152C73 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/UberHackathon/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = UberHackathon;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -598,9 +596,12 @@
 			baseConfigurationReference = C02E8BEB552629FF609070AE /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/UberHackathon/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = UberHackathon;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -178,7 +178,7 @@ static NSString *const AVOS_APP_KEY = @"dwGilg2Kot1iH2kXCP7zIIlS";
     // 设置文字属性
     UITabBarItem *tabBar = [UITabBarItem appearance];
     [tabBar setTitleTextAttributes:normalAttrs forState:UIControlStateNormal];
-    [tabBar setTitleTextAttributes:normalAttrs forState:UIControlStateHighlighted];
+    [tabBar setTitleTextAttributes:selectedAttrs forState:UIControlStateSelected];
     
     // 设置背景图片
 //    UITabBar *tabBarAppearance = [UITabBar appearance];

@@ -68,7 +68,6 @@ const NSString *rightButtonSignupAction = @"cancelClick";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.status = freeStatus;
-    
     [self createVideoPlayer];
     [self createTitleLabel];
     [self createTwoButton];

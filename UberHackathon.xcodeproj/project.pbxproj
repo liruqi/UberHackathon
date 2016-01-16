@@ -1,0 +1,463 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4D04FEAFC0A82BCDD4E8AD95 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F63F88D99E99F3AF7EA96D8 /* libPods.a */; };
+		9A779D421C4A25070030B002 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A779D271C4A25070030B002 /* AppDelegate.m */; };
+		9A779D431C4A25070030B002 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A779D281C4A25070030B002 /* LaunchScreen.xib */; };
+		9A779D441C4A25070030B002 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A779D2A1C4A25070030B002 /* Main.storyboard */; };
+		9A779D451C4A25070030B002 /* CYLHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A779D2F1C4A25070030B002 /* CYLHomeViewController.m */; };
+		9A779D461C4A25070030B002 /* CYLPlusButtonSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A779D331C4A25070030B002 /* CYLPlusButtonSubclass.m */; };
+		9A779D471C4A25070030B002 /* CYLMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A779D361C4A25070030B002 /* CYLMessageViewController.m */; };
+		9A779D481C4A25070030B002 /* CYLMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A779D391C4A25070030B002 /* CYLMineViewController.m */; };
+		9A779D491C4A25070030B002 /* CYLDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A779D3C1C4A25070030B002 /* CYLDetailsViewController.m */; };
+		9A779D4A1C4A25070030B002 /* CYLSameFityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A779D3E1C4A25070030B002 /* CYLSameFityViewController.m */; };
+		9A779D4B1C4A25070030B002 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A779D3F1C4A25070030B002 /* Images.xcassets */; };
+		9A779D4C1C4A25070030B002 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A779D401C4A25070030B002 /* Info.plist */; };
+		9A779D4D1C4A25070030B002 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A779D411C4A25070030B002 /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1F63F88D99E99F3AF7EA96D8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A0C30D53F8D17AAE8152C73 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		9A779D261C4A25070030B002 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9A779D271C4A25070030B002 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9A779D291C4A25070030B002 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		9A779D2B1C4A25070030B002 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9A779D2E1C4A25070030B002 /* CYLHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLHomeViewController.h; sourceTree = "<group>"; };
+		9A779D2F1C4A25070030B002 /* CYLHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLHomeViewController.m; sourceTree = "<group>"; };
+		9A779D321C4A25070030B002 /* CYLPlusButtonSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLPlusButtonSubclass.h; sourceTree = "<group>"; };
+		9A779D331C4A25070030B002 /* CYLPlusButtonSubclass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLPlusButtonSubclass.m; sourceTree = "<group>"; };
+		9A779D351C4A25070030B002 /* CYLMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLMessageViewController.h; sourceTree = "<group>"; };
+		9A779D361C4A25070030B002 /* CYLMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLMessageViewController.m; sourceTree = "<group>"; };
+		9A779D381C4A25070030B002 /* CYLMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLMineViewController.h; sourceTree = "<group>"; };
+		9A779D391C4A25070030B002 /* CYLMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLMineViewController.m; sourceTree = "<group>"; };
+		9A779D3B1C4A25070030B002 /* CYLDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLDetailsViewController.h; sourceTree = "<group>"; };
+		9A779D3C1C4A25070030B002 /* CYLDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLDetailsViewController.m; sourceTree = "<group>"; };
+		9A779D3D1C4A25070030B002 /* CYLSameFityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLSameFityViewController.h; sourceTree = "<group>"; };
+		9A779D3E1C4A25070030B002 /* CYLSameFityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLSameFityViewController.m; sourceTree = "<group>"; };
+		9A779D3F1C4A25070030B002 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9A779D401C4A25070030B002 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A779D411C4A25070030B002 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9A77A2E51BDCC144009CD1A4 /* UberHackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberHackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C02E8BEB552629FF609070AE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9A77A2E21BDCC144009CD1A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D04FEAFC0A82BCDD4E8AD95 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0C26B6C5AA14259CDDC6AD5F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7A0C30D53F8D17AAE8152C73 /* Pods.debug.xcconfig */,
+				C02E8BEB552629FF609070AE /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9A779D251C4A25070030B002 /* UberHackathon */ = {
+			isa = PBXGroup;
+			children = (
+				9A779D2C1C4A25070030B002 /* Classes */,
+				9A779D261C4A25070030B002 /* AppDelegate.h */,
+				9A779D271C4A25070030B002 /* AppDelegate.m */,
+				9A779D281C4A25070030B002 /* LaunchScreen.xib */,
+				9A779D2A1C4A25070030B002 /* Main.storyboard */,
+				9A779D3F1C4A25070030B002 /* Images.xcassets */,
+				9A779D401C4A25070030B002 /* Info.plist */,
+				9A779D411C4A25070030B002 /* main.m */,
+			);
+			path = UberHackathon;
+			sourceTree = "<group>";
+		};
+		9A779D2C1C4A25070030B002 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9A779D2D1C4A25070030B002 /* Home */,
+				9A779D301C4A25070030B002 /* Main */,
+				9A779D341C4A25070030B002 /* Message */,
+				9A779D371C4A25070030B002 /* Mine */,
+				9A779D3A1C4A25070030B002 /* SameCity */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		9A779D2D1C4A25070030B002 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9A779D2E1C4A25070030B002 /* CYLHomeViewController.h */,
+				9A779D2F1C4A25070030B002 /* CYLHomeViewController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9A779D301C4A25070030B002 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9A779D311C4A25070030B002 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		9A779D311C4A25070030B002 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9A779D321C4A25070030B002 /* CYLPlusButtonSubclass.h */,
+				9A779D331C4A25070030B002 /* CYLPlusButtonSubclass.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9A779D341C4A25070030B002 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				9A779D351C4A25070030B002 /* CYLMessageViewController.h */,
+				9A779D361C4A25070030B002 /* CYLMessageViewController.m */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		9A779D371C4A25070030B002 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				9A779D381C4A25070030B002 /* CYLMineViewController.h */,
+				9A779D391C4A25070030B002 /* CYLMineViewController.m */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		9A779D3A1C4A25070030B002 /* SameCity */ = {
+			isa = PBXGroup;
+			children = (
+				9A779D3B1C4A25070030B002 /* CYLDetailsViewController.h */,
+				9A779D3C1C4A25070030B002 /* CYLDetailsViewController.m */,
+				9A779D3D1C4A25070030B002 /* CYLSameFityViewController.h */,
+				9A779D3E1C4A25070030B002 /* CYLSameFityViewController.m */,
+			);
+			path = SameCity;
+			sourceTree = "<group>";
+		};
+		9A77A2DC1BDCC144009CD1A4 = {
+			isa = PBXGroup;
+			children = (
+				9A779D251C4A25070030B002 /* UberHackathon */,
+				9A77A2E61BDCC144009CD1A4 /* Products */,
+				0C26B6C5AA14259CDDC6AD5F /* Pods */,
+				F64EB5C0CB8A346C26B2C764 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9A77A2E61BDCC144009CD1A4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A77A2E51BDCC144009CD1A4 /* UberHackathon.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F64EB5C0CB8A346C26B2C764 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F63F88D99E99F3AF7EA96D8 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9A77A2E41BDCC144009CD1A4 /* UberHackathon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A77A3081BDCC144009CD1A4 /* Build configuration list for PBXNativeTarget "UberHackathon" */;
+			buildPhases = (
+				C92F41010E8D4B2B7BC81C3D /* Check Pods Manifest.lock */,
+				9A77A2E11BDCC144009CD1A4 /* Sources */,
+				9A77A2E21BDCC144009CD1A4 /* Frameworks */,
+				9A77A2E31BDCC144009CD1A4 /* Resources */,
+				D87B1CDBD6686B7DB506C53D /* Embed Pods Frameworks */,
+				3ED0ABD0D3071384BE8C165A /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UberHackathon;
+			productName = CYLTabBarControllerDemoForWeib;
+			productReference = 9A77A2E51BDCC144009CD1A4 /* UberHackathon.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9A77A2DD1BDCC144009CD1A4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "微博@iOS程序犭袁";
+				TargetAttributes = {
+					9A77A2E41BDCC144009CD1A4 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+				};
+			};
+			buildConfigurationList = 9A77A2E01BDCC144009CD1A4 /* Build configuration list for PBXProject "UberHackathon" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9A77A2DC1BDCC144009CD1A4;
+			productRefGroup = 9A77A2E61BDCC144009CD1A4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9A77A2E41BDCC144009CD1A4 /* UberHackathon */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9A77A2E31BDCC144009CD1A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A779D4C1C4A25070030B002 /* Info.plist in Resources */,
+				9A779D4B1C4A25070030B002 /* Images.xcassets in Resources */,
+				9A779D431C4A25070030B002 /* LaunchScreen.xib in Resources */,
+				9A779D441C4A25070030B002 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3ED0ABD0D3071384BE8C165A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C92F41010E8D4B2B7BC81C3D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D87B1CDBD6686B7DB506C53D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9A77A2E11BDCC144009CD1A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A779D461C4A25070030B002 /* CYLPlusButtonSubclass.m in Sources */,
+				9A779D481C4A25070030B002 /* CYLMineViewController.m in Sources */,
+				9A779D491C4A25070030B002 /* CYLDetailsViewController.m in Sources */,
+				9A779D471C4A25070030B002 /* CYLMessageViewController.m in Sources */,
+				9A779D4A1C4A25070030B002 /* CYLSameFityViewController.m in Sources */,
+				9A779D451C4A25070030B002 /* CYLHomeViewController.m in Sources */,
+				9A779D4D1C4A25070030B002 /* main.m in Sources */,
+				9A779D421C4A25070030B002 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9A779D281C4A25070030B002 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A779D291C4A25070030B002 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		9A779D2A1C4A25070030B002 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A779D2B1C4A25070030B002 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9A77A3061BDCC144009CD1A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9A77A3071BDCC144009CD1A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9A77A3091BDCC144009CD1A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A0C30D53F8D17AAE8152C73 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "$(SRCROOT)/UberHackathon/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = UberHackathon;
+			};
+			name = Debug;
+		};
+		9A77A30A1BDCC144009CD1A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C02E8BEB552629FF609070AE /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "$(SRCROOT)/UberHackathon/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = UberHackathon;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9A77A2E01BDCC144009CD1A4 /* Build configuration list for PBXProject "UberHackathon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A77A3061BDCC144009CD1A4 /* Debug */,
+				9A77A3071BDCC144009CD1A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A77A3081BDCC144009CD1A4 /* Build configuration list for PBXNativeTarget "UberHackathon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A77A3091BDCC144009CD1A4 /* Debug */,
+				9A77A30A1BDCC144009CD1A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9A77A2DD1BDCC144009CD1A4 /* Project object */;
+}

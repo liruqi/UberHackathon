@@ -26,6 +26,8 @@
             field.placeholder = i ? @"password" : @"username";
             field.secureTextEntry = i ? YES : NO;
             field.keyboardAppearance = UIKeyboardAppearanceDark;
+            field.autocorrectionType = UITextAutocorrectionTypeNo;
+            field.autocapitalizationType = UITextAutocapitalizationTypeNone;
             if (!i) {
                 self.username = field;
             } else {

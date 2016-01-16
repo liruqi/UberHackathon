@@ -1,0 +1,32 @@
+PODS:
+  - AVOSCloud (3.2.0)
+  - AVOSCloudIM (3.2.0):
+    - AVOSCloud
+  - CYLDeallocBlockExecutor (1.0.0)
+  - CYLTabBarController (1.0.5)
+  - IQKeyboardManager (3.3.5)
+  - JSONModel (1.2.0)
+  - MBProgressHUD (0.9.2)
+  - XHSetting (1.0)
+
+DEPENDENCIES:
+  - AVOSCloud
+  - AVOSCloudIM
+  - CYLDeallocBlockExecutor
+  - CYLTabBarController
+  - IQKeyboardManager
+  - JSONModel
+  - MBProgressHUD
+  - XHSetting
+
+SPEC CHECKSUMS:
+  AVOSCloud: 798551ac6cbf541b8436ce94800e2e59a042b670
+  AVOSCloudIM: 082f0268a22253fd6ad70ec4e4dfd686b36a7308
+  CYLDeallocBlockExecutor: 13dc997661100052ed24bb918fcc65e8535af59d
+  CYLTabBarController: c758aba2b1aac34be1c217047079ab11b4a18f4a
+  IQKeyboardManager: 128bcb96b3ec03ff87942cdd7fa7f44491aa3d08
+  JSONModel: 12523685c4b623553ccf844bbbf7007624317b2c
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  XHSetting: 8dc92608adcf9453f4bbb334cd10de680387537c
+
+COCOAPODS: 0.39.0

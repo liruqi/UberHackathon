@@ -1,0 +1,1 @@
+../../../XHSetting/Source/XHBadgeLabel.h

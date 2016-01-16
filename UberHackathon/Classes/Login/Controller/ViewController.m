@@ -11,6 +11,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AVOSCloud/AVUser.h>
 #import "CYLDeallocBlockExecutor.h"
+#import "MBProgressHUD+CYLAddition.h"
 
 static float kSetoff = 500;
 static float kYoffset = 200;
@@ -222,16 +223,6 @@ const NSString *rightButtonSignupAction = @"cancelClick";
     [self transitionToNewStatus:signupStatus];
 }
 
-- (void)showAlert:(NSString *)text {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:text delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
-    [alert show];
-    int delayInSeconds = 1;
-    dispatch_time_t when = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(when, dispatch_get_main_queue(), ^{
-        [alert dismissWithClickedButtonIndex:0 animated:YES];
-    });
-}
-
 - (void)usernameRegister {
     AVUser *user = [AVUser user];
     user.username = self.cardView.username.text;
@@ -240,10 +231,10 @@ const NSString *rightButtonSignupAction = @"cancelClick";
     [user signUp:&error];
     if (!error) {
         NSLog(@"🔴类名与方法名：%@（在第%@行），描述：%@", @(__PRETTY_FUNCTION__), @(__LINE__), @"注册成功");
-        [self showAlert:@"注册成功"];
+        [self showSuccessAlert:@"注册成功"];
     } else {
         NSLog(@"🔴类名与方法名：%@（在第%@行），描述：%@", @(__PRETTY_FUNCTION__), @(__LINE__), error);
-        [self showAlert:error.localizedDescription];
+        [self showErrorAlert:error.localizedDescription];
         
     }
     
@@ -254,11 +245,10 @@ const NSString *rightButtonSignupAction = @"cancelClick";
     [AVUser logInWithUsername: self.cardView.username.text password:self.cardView.password.text error:&error];
     if (error) {
         NSLog(@"🔴类名与方法名：%@（在第%@行），描述：%@", @(__PRETTY_FUNCTION__), @(__LINE__), error);
-        [self showAlert:error.localizedDescription];
-        
+        [self showErrorAlert:error.localizedDescription];
     } else {
         NSLog(@"🔴类名与方法名：%@（在第%@行），描述：%@", @(__PRETTY_FUNCTION__), @(__LINE__), @"登陆成功");
-        [self showAlert:@"登陆成功"];
+        [self showSuccessAlert:@"登陆成功"];
         self.completionBlock ? self.completionBlock() : nil;
     }
 }
@@ -273,6 +263,8 @@ const NSString *rightButtonSignupAction = @"cancelClick";
         [self usernameRegister];
     }
     [self transitionToNewStatus:freeStatus];
+    [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
+
 }
 
 - (void)cancelClick {

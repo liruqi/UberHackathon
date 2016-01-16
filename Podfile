@@ -4,6 +4,5 @@ pod  'AVOSCloud'
 pod  'AVOSCloudIM'
 pod  'CYLDeallocBlockExecutor'
 pod  'IQKeyboardManager'
+pod  'JSONModel'
 pod  'XHSetting'
-
-

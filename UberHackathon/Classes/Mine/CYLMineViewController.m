@@ -239,7 +239,10 @@
     ViewController *loginViewController = [[ViewController alloc] init];
     __weak __typeof(loginViewController) weakLoginViewController = loginViewController;
     loginViewController.completionBlock = ^ {
-        [weakLoginViewController dismissViewControllerAnimated:YES completion:nil];
+        [[weakLoginViewController.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+        [weakLoginViewController dismissViewControllerAnimated:YES completion:^{
+            [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
+        }];
     };
     [self presentViewController:loginViewController animated:YES completion:nil];
 }

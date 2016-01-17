@@ -10,6 +10,10 @@
 		4D04FEAFC0A82BCDD4E8AD95 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F63F88D99E99F3AF7EA96D8 /* libPods.a */; };
 		550FC7391C4A7B6C00AB8A31 /* UBHViewSpot.m in Sources */ = {isa = PBXBuildFile; fileRef = 550FC7381C4A7B6C00AB8A31 /* UBHViewSpot.m */; };
 		550FC73B1C4A7DD300AB8A31 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550FC73A1C4A7DD300AB8A31 /* CoreLocation.framework */; };
+		9A2F09E81C4B186D001EBF1C /* AttractionIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F09E01C4B186D001EBF1C /* AttractionIntroViewController.m */; };
+		9A2F09E91C4B186D001EBF1C /* AttractionIntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2F09E11C4B186D001EBF1C /* AttractionIntroViewController.xib */; };
+		9A2F09EA1C4B186D001EBF1C /* AttractionIntroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F09E41C4B186D001EBF1C /* AttractionIntroCell.m */; };
+		9A2F09EB1C4B186D001EBF1C /* AttractionIntroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2F09E51C4B186D001EBF1C /* AttractionIntroCell.xib */; };
 		9A779D421C4A25070030B002 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A779D271C4A25070030B002 /* AppDelegate.m */; };
 		9A779D431C4A25070030B002 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A779D281C4A25070030B002 /* LaunchScreen.xib */; };
 		9A779D441C4A25070030B002 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A779D2A1C4A25070030B002 /* Main.storyboard */; };
@@ -101,6 +105,12 @@
 		550FC7381C4A7B6C00AB8A31 /* UBHViewSpot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBHViewSpot.m; sourceTree = "<group>"; };
 		550FC73A1C4A7DD300AB8A31 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7A0C30D53F8D17AAE8152C73 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		9A2F09DF1C4B186D001EBF1C /* AttractionIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttractionIntroViewController.h; sourceTree = "<group>"; };
+		9A2F09E01C4B186D001EBF1C /* AttractionIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttractionIntroViewController.m; sourceTree = "<group>"; };
+		9A2F09E11C4B186D001EBF1C /* AttractionIntroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttractionIntroViewController.xib; sourceTree = "<group>"; };
+		9A2F09E31C4B186D001EBF1C /* AttractionIntroCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttractionIntroCell.h; sourceTree = "<group>"; };
+		9A2F09E41C4B186D001EBF1C /* AttractionIntroCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttractionIntroCell.m; sourceTree = "<group>"; };
+		9A2F09E51C4B186D001EBF1C /* AttractionIntroCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttractionIntroCell.xib; sourceTree = "<group>"; };
 		9A779D261C4A25070030B002 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9A779D271C4A25070030B002 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9A779D291C4A25070030B002 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -274,6 +284,27 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		9A2F09DE1C4B186D001EBF1C /* AttractionIntro */ = {
+			isa = PBXGroup;
+			children = (
+				9A2F09DF1C4B186D001EBF1C /* AttractionIntroViewController.h */,
+				9A2F09E01C4B186D001EBF1C /* AttractionIntroViewController.m */,
+				9A2F09E11C4B186D001EBF1C /* AttractionIntroViewController.xib */,
+				9A2F09E21C4B186D001EBF1C /* IntroCell */,
+			);
+			path = AttractionIntro;
+			sourceTree = "<group>";
+		};
+		9A2F09E21C4B186D001EBF1C /* IntroCell */ = {
+			isa = PBXGroup;
+			children = (
+				9A2F09E31C4B186D001EBF1C /* AttractionIntroCell.h */,
+				9A2F09E41C4B186D001EBF1C /* AttractionIntroCell.m */,
+				9A2F09E51C4B186D001EBF1C /* AttractionIntroCell.xib */,
+			);
+			path = IntroCell;
+			sourceTree = "<group>";
+		};
 		9A779D251C4A25070030B002 /* UberHackathon */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,6 +440,7 @@
 		9AECA5051C4A55C90079C93E /* SelectAttractions */ = {
 			isa = PBXGroup;
 			children = (
+				9A2F09DE1C4B186D001EBF1C /* AttractionIntro */,
 				9AECA5271C4A80330079C93E /* Attractions */,
 				9AECA5061C4A55C90079C93E /* SelectCity */,
 			);
@@ -750,6 +782,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A2F09E91C4B186D001EBF1C /* AttractionIntroViewController.xib in Resources */,
 				9AECA63B1C4ABB310079C93E /* circle.png in Resources */,
 				9AECA61C1C4ABB310079C93E /* Album_like_icon@2x.png in Resources */,
 				9AECA5321C4A80330079C93E /* demo_3.jpg in Resources */,
@@ -766,6 +799,7 @@
 				9AECA6221C4ABB310079C93E /* AlbumInformationLikeHL@2x.png in Resources */,
 				9AECA5181C4A55C90079C93E /* CityListViewController.xib in Resources */,
 				9AECA61F1C4ABB310079C93E /* AlbumAddBtnHL@2x.png in Resources */,
+				9A2F09EB1C4B186D001EBF1C /* AttractionIntroCell.xib in Resources */,
 				9AECA51A1C4A55C90079C93E /* CitySelectTableViewController.xib in Resources */,
 				9AECA6201C4ABB310079C93E /* AlbumFlagMark@2x.png in Resources */,
 				9AECA6231C4ABB310079C93E /* AlbumInformationLikeHL@3x.png in Resources */,
@@ -849,6 +883,7 @@
 				9AECA6401C4ABB310079C93E /* XHPathCover.m in Sources */,
 				9AECA6441C4ABB310079C93E /* XHViewState.m in Sources */,
 				9AECA6341C4ABB310079C93E /* LZAlbumLikesCommentsView.m in Sources */,
+				9A2F09EA1C4B186D001EBF1C /* AttractionIntroCell.m in Sources */,
 				9AECA6281C4ABB310079C93E /* LCAlbum.m in Sources */,
 				9AECA5341C4A80330079C93E /* JBParallaxCell.m in Sources */,
 				9AECA6261C4ABB310079C93E /* LZAlbumManager.m in Sources */,
@@ -859,6 +894,7 @@
 				9AECA5011C4A3FEB0079C93E /* ViewController.m in Sources */,
 				9AECA6391C4ABB310079C93E /* LZAlbumTableViewCell.m in Sources */,
 				9AECA53D1C4A8D280079C93E /* MBProgressHUD+CYLAddition.m in Sources */,
+				9A2F09E81C4B186D001EBF1C /* AttractionIntroViewController.m in Sources */,
 				9AECA5351C4A80330079C93E /* UBAttractionsViewController.m in Sources */,
 				9AECA5021C4A3FEB0079C93E /* CardView.m in Sources */,
 				9AECA6351C4ABB310079C93E /* LZAlbumOperationView.m in Sources */,

@@ -173,10 +173,22 @@ const NSString *rightButtonSignupAction = @"cancelClick";
 }
 
 - (void)createTwoButton {
+    
     self.leftButton = [self createButtonWithTitle:@"Log in" index:buttonLeft action:@selector(loginClick)];
     self.rightButton = [self createButtonWithTitle:@"Sign up" index:buttonRight action:@selector(signupClick)];
     [self.view addSubview:self.leftButton];
     [self.view addSubview:self.rightButton];
+    
+    UIButton *uberLoginBtn = [[UIButton alloc] initWithFrame:CGRectMake(16, 0, CGRectGetWidth(self.view.frame)-32, 44)];
+    [uberLoginBtn setTitle:@"Login With Uber" forState:UIControlStateNormal];
+    [uberLoginBtn setTintColor:[UIColor whiteColor]];
+    [uberLoginBtn.layer setCornerRadius:BUTTON_CORNER_RADIUS];
+    [uberLoginBtn setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.2f]];
+    [uberLoginBtn setCenter:CGPointMake(CGRectGetWidth(self.view.frame)/2, self.leftButton.frame.origin.y-40)];
+    
+    [uberLoginBtn addTarget:self action:@selector(loginWithUber) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:uberLoginBtn];
 }
 
 - (UIButton *)createButtonWithTitle:(NSString *)title index:(buttonDirection)index action:(SEL)action {
@@ -355,6 +367,12 @@ const NSString *rightButtonSignupAction = @"cancelClick";
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - Uber Login
+
+- (void)loginWithUber {
+    NSLog(@"Uber Login");
 }
 
 @end

@@ -104,7 +104,7 @@
     if (!indexPath.row) {
         return 40;
     }
-    return 100;
+    return 400;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -143,10 +143,12 @@
     
     switch (indexPath.row) {
         case 0:
-            [cell.topLabel setText:@"景点名称"];
-            [cell.textView setText:@"222"];
+//            [cell.topLabel setText:@"景点名称"];
+//            [cell.textView setText:@"222"];
             break;
-            
+        case 1:
+            [cell.topLabel setText:@"景点介绍"];
+            break;
         default:
             break;
     }

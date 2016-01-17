@@ -180,7 +180,7 @@ const NSString *rightButtonSignupAction = @"cancelClick";
     [self.view addSubview:self.rightButton];
     
     UIButton *uberLoginBtn = [[UIButton alloc] initWithFrame:CGRectMake(16, 0, CGRectGetWidth(self.view.frame)-32, 44)];
-    [uberLoginBtn setTitle:@"Login With Uber" forState:UIControlStateNormal];
+    [uberLoginBtn setTitle:@"Uber Authorization" forState:UIControlStateNormal];
     [uberLoginBtn setTintColor:[UIColor whiteColor]];
     [uberLoginBtn.layer setCornerRadius:BUTTON_CORNER_RADIUS];
     [uberLoginBtn setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.2f]];
@@ -377,20 +377,36 @@ const NSString *rightButtonSignupAction = @"cancelClick";
 
 #pragma mark - Uber Login
 
+
+
+//curl -H 'Authorization: Token ErRQ338IAFt5f1wmN6w1fhm38beB4YYgONM1LyE_' 'https://api.uber.com/v1/products?latitude=37.7759792&longitude=-122.41823'
+//
+//
+//
+//curl -H 'Authorization: Token ErRQ338IAFt5f1wmN6w1fhm38beB4YYgONM1LyE_' 'https://api.uber.com/v1/estimates/price?start_latitude=37.7759792&start_longitude=-122.41823&end_latitude=36.7759792&end_longitude=-121.41823'
+//
+//
+//curl -H 'Authorization: Token ErRQ338IAFt5f1wmN6w1fhm38beB4YYgONM1LyE_' 'https://api.uber.com/v1/estimates/time?start_latitude=37.7759792&start_longitude=-122.41823'
+
+
 - (void)loginWithUber {
     NSLog(@"Uber Login");
     UIWebView *webView = [[UIWebView alloc] initWithFrame:self.view.frame];
     [webView setDelegate:self];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://login.uber.com/oauth/v2/authorize?client_id=Gg8KD0ik3y5JKdRtB4HModzlIJA_hZ0s&response_type=code&redirect_uri=http://baidu.com&state=123"] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:20];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://login.uber.com/oauth/v2/authorize?client_id=Gg8KD0ik3y5JKdRtB4HModzlIJA_hZ0s&response_type=code&redirect_uri=https://www.baidu.com&state=123&scope=all_trips"] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:20];
     [webView loadRequest:request];
     UIViewController *vc = [[UIViewController alloc] init];
     [vc.view addSubview:webView];
+    
     UINavigationController *naviVC = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:naviVC animated:YES completion:nil];
 }
 
 -(void)webViewDidFinishLoad:(UIWebView *)View {
     NSString *url = View.request.URL.absoluteString;
+    if ([url isEqualToString:@"https://www.baidu.com/?error=invalid_scope&state=123"]) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
     
     NSLog(@"%@",url);
 }

@@ -31,10 +31,21 @@
     return self;
 }
 
+- (void)callMap {
+    BOOL hasBaiduMap = NO;
+    if ([[UIApplication sharedApplication]canOpenURL:[NSURL URLWithString:@"baidumap://map/"]]){
+        hasBaiduMap = YES;
+    }
+    NSString *urlString = [[NSString stringWithFormat:@"baidumap://map/marker?location=49.047669,116.313082&title=位置&content=位置&src=UberHackathon"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] ;
+    
+    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:urlString]];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    UIBarButtonItem *mapBtn = [[UIBarButtonItem alloc] initWithTitle:@"查看地图" style:UIBarButtonItemStylePlain target:self action:@selector(callMap)];
+    [self.navigationItem setRightBarButtonItem:mapBtn];
     
     [self.tableView setDataSource:self];
     [self.tableView setDelegate:self];

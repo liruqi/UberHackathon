@@ -250,7 +250,6 @@ static NSString* kCITYNAME = @"kCITYNAME";
     self.title = name;
     [[NSUserDefaults standardUserDefaults] setObject:name forKey:kCITYNAME];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -279,7 +278,9 @@ static NSString* kCITYNAME = @"kCITYNAME";
     AttractionIntroViewController *attractionIntroVC = [[AttractionIntroViewController alloc] init];
     UBHViewSpot *viewSpot  = self.dataSource[indexPath.row];
     [attractionIntroVC setCityName:viewSpot.city];
-    [attractionIntroVC setHeaderImage:self.tableItems[indexPath.row]];
+//    [attractionIntroVC setHeaderImage:self.tableItems[indexPath.row]];
+    [attractionIntroVC setImageURLString:viewSpot.image];
+    [attractionIntroVC setLocationName:viewSpot.name];
     attractionIntroVC.hidesBottomBarWhenPushed = YES;  // This property needs to be set before pushing viewController to the navigationController's stack.
     [self.navigationController pushViewController:attractionIntroVC animated:YES];
 }

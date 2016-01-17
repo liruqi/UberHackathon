@@ -7,7 +7,6 @@
 //
 
 #import "MBProgressHUD+CYLAddition.h"
-#import "MBProgressHUD+KK.h"
 
 @implementation UIViewController (CYLAddition)
 
@@ -69,12 +68,12 @@
     app.networkActivityIndicatorVisible=YES;
 }
 
--(void)hideNetworkIndicator{
+- (void)hideNetworkIndicator{
     UIApplication *app=[UIApplication sharedApplication];
     app.networkActivityIndicatorVisible=NO;
 }
 
--(void)showProgress {
+- (void)showProgress {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 }
 

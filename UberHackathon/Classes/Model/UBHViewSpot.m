@@ -9,17 +9,26 @@
 #import "UBHViewSpot.h"
 
 @implementation UBHViewSpot
+@dynamic  name, city, longitude, latitude, type, suggestion, intro, image;
 
-+ (NSArray*) suggestedViewSpotsForBeijing {
-    NSMutableArray* ret = [NSMutableArray array];
-    NSError* e;
-    UBHViewSpot *s1 = [[UBHViewSpot alloc] initWithDictionary:@{
-        @"name":@"颐和园",
-        @"city":@"北京",
-        @"image":@"http://t1.gstatic.com/images?q=tbn:ANd9GcS2dVjv2e7F-rFzWuoH_htaSJCL_wzRCuU6pJS_ytuvsqIvNXQ3"}
-                                                        error:& e];
-    [ret addObject:s1];
-    return ret;
++ (void)load {
+   [self registerSubclass];
 }
+
++(NSString*)parseClassName{
+    return @"UBHViewSpot";
+}
+
+//+ (NSArray*) suggestedViewSpotsForBeijing {
+//    NSMutableArray* ret = [NSMutableArray array];
+//    NSError* e;
+//    UBHViewSpot *s1 = [[UBHViewSpot alloc] initWithDictionary:@{
+//        @"name":@"颐和园",
+//        @"city":@"北京",
+//        @"image":@"http://t1.gstatic.com/images?q=tbn:ANd9GcS2dVjv2e7F-rFzWuoH_htaSJCL_wzRCuU6pJS_ytuvsqIvNXQ3"}
+//                                                        error:& e];
+//    [ret addObject:s1];
+//    return ret;
+//}
 
 @end

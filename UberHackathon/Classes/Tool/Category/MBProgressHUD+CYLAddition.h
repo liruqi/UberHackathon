@@ -7,6 +7,7 @@
 //
 
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "MBProgressHUD+KK.h"
 
 @interface UIViewController (CYLAddition)
 

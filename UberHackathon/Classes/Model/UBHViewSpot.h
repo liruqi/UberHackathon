@@ -7,17 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <JSONModel/JSONModel.h>
+#import <AVOSCloud/AVOSCloud.h>
 #import <MapKit/MapKit.h>
 
-@interface UBHViewSpot : JSONModel
+@interface UBHViewSpot : AVObject<AVSubclassing>
 
 @property (nonatomic, strong) NSString* name;
 @property (nonatomic, strong) NSString* city;
-@property (nonatomic, assign) CLLocationCoordinate2D location;
+@property (nonatomic, copy) NSString *longitude;
+@property (nonatomic, copy) NSString *latitude;
+@property (nonatomic, copy) NSString *type;
+@property (nonatomic, copy) NSString *suggestion;
+//@property (nonatomic, assign) CLLocationCoordinate2D location;
 @property (nonatomic, strong) NSString* intro;
 @property (nonatomic, strong) NSString* image;
 
-+ (NSArray*) suggestedViewSpotsForBeijing;
+//+ (NSArray*) suggestedViewSpotsForBeijing;
 
 @end

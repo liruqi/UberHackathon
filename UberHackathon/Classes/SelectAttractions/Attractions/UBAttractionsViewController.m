@@ -28,14 +28,20 @@
 #import "UBAttractionsViewController.h"
 #import "CityListViewController.h"
 #import "AttractionIntroViewController.h"
-
+#import "UBHViewSpot.h"
 // Table cells
 #import "JBParallaxCell.h"
+#import "MBProgressHUD+CYLAddition.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+
 static NSString* kCITYNAME = @"kCITYNAME";
 @interface UBAttractionsViewController () <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate, CityListDelegate>
 
-@property (nonatomic, strong) NSArray *tableItems;
+@property (nonatomic, strong) NSMutableArray *tableItems;
+@property (nonatomic, strong) NSMutableArray *cityImageURLs;
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *dataSource;
+
 
 @end
 
@@ -46,22 +52,14 @@ static NSString* kCITYNAME = @"kCITYNAME";
 {
     [super viewDidLoad];
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-self.navigationController.navigationBar.frame.size.height) style:UITableViewStylePlain];
-        //FIXME:why push then pop inset changed because LTNavigationBar ???
-//    [self.tableView setContentInset:UIEdgeInsetsMake(0, 0, self.tabBarController.tabBar.frame.size.height + 20, 0)];
-
+    //FIXME:why push then pop inset changed because LTNavigationBar ???
+    //    [self.tableView setContentInset:UIEdgeInsetsMake(0, 0, self.tabBarController.tabBar.frame.size.height + 20, 0)];
+    
     // Load the items in the table
-    self.tableItems = @[[UIImage imageNamed:@"demo_1.jpg"],
-                        [UIImage imageNamed:@"demo_2.jpg"],
-                        [UIImage imageNamed:@"demo_3.jpg"],
-                        [UIImage imageNamed:@"demo_4.png"],
-                        [UIImage imageNamed:@"demo_1.jpg"],
-                        [UIImage imageNamed:@"demo_2.jpg"],
-                        [UIImage imageNamed:@"demo_3.jpg"],
-                        [UIImage imageNamed:@"demo_4.png"],
-                        [UIImage imageNamed:@"demo_3.jpg"],
-                        [UIImage imageNamed:@"demo_2.jpg"],
-                        [UIImage imageNamed:@"demo_1.jpg"],
-                        [UIImage imageNamed:@"demo_4.png"]];
+    
+
+
+                      
     
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
@@ -72,8 +70,69 @@ static NSString* kCITYNAME = @"kCITYNAME";
         cityName = @"北京";
     }
     self.title = cityName;
+    [self queryCityWithName:cityName];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"切换城市" style:UIBarButtonItemStylePlain target:self action:@selector(onChangeCity:)];
-    
+    [self.tableView reloadData];
+}
+
+/**
+ *  lazy load dataSource
+ *
+ *  @return NSMutableArray
+ */
+- (NSMutableArray *)dataSource {
+    if (_dataSource == nil) {
+        _dataSource = [[NSMutableArray alloc] init];
+    }
+    return _dataSource;
+}
+
+- (void)queryCityWithName:(NSString *)cityName {
+    AVQuery *query = [AVQuery queryWithClassName:@"UBHViewSpot"];
+    [query whereKey:@"city" equalTo:cityName];
+    query.cachePolicy = kAVCachePolicyNetworkElseCache;
+    [MBProgressHUD showHUD];
+    NSArray *objects = [query findObjects];
+    self.dataSource = (NSMutableArray *)objects;
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        [MBProgressHUD hideAllHUDsForView:self.view.window animated:YES];
+        [objects enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            UBHViewSpot *viewSpot = obj;
+            UIImage *image = [UIImage imageNamed:@"demo_1.jpg"];
+            NSLog(@"🔴类名与方法名：%@（在第%@行），描述：%@%@", @(__PRETTY_FUNCTION__), @(__LINE__), viewSpot.image, self.cityImageURLs);
+            [self.tableItems addObject:image];
+            NSURL *url = [NSURL URLWithString:viewSpot.image];
+            [self.cityImageURLs addObject:url];
+            if (idx == [objects indexOfObject:[objects lastObject]]) {
+                [MBProgressHUD hideHUD];
+                [self.tableView reloadData];
+            }
+//        }];
+     
+    }];
+}
+
+/**
+ *  lazy load tableItems
+ *
+ *  @return NSMutableArray
+ */
+- (NSMutableArray *)tableItems {
+    if (_tableItems == nil) {
+        _tableItems = [[NSMutableArray alloc] init];
+    }
+    return _tableItems;
+}
+/**
+ *  lazy load cityImageURLs
+ *
+ *  @return NSMutableArray
+ */
+- (NSMutableArray *)cityImageURLs {
+    if (_cityImageURLs == nil) {
+        _cityImageURLs = [[NSMutableArray alloc] init];
+    }
+    return _cityImageURLs;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -92,6 +151,7 @@ static NSString* kCITYNAME = @"kCITYNAME";
     self.title = name;
     [[NSUserDefaults standardUserDefaults] setObject:name forKey:kCITYNAME];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -118,7 +178,8 @@ static NSString* kCITYNAME = @"kCITYNAME";
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     AttractionIntroViewController *attractionIntroVC = [[AttractionIntroViewController alloc] init];
-    [attractionIntroVC setCityName:@""];
+    UBHViewSpot *viewSpot  = self.dataSource[indexPath.row];
+    [attractionIntroVC setCityName:viewSpot.city];
     [attractionIntroVC setHeaderImage:self.tableItems[indexPath.row]];
     attractionIntroVC.hidesBottomBarWhenPushed = YES;  // This property needs to be set before pushing viewController to the navigationController's stack.
     [self.navigationController pushViewController:attractionIntroVC animated:YES];
@@ -132,9 +193,12 @@ static NSString* kCITYNAME = @"kCITYNAME";
         cell = [[JBParallaxCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    cell.titleLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Cell %d",), indexPath.row];
-    cell.subtitleLabel.text = [NSString stringWithFormat:NSLocalizedString(@"This is a parallex cell %d",),indexPath.row];
-    cell.parallaxImage.image = self.tableItems[indexPath.row];
+    UBHViewSpot *viewSpot  = self.dataSource[indexPath.row];
+    cell.titleLabel.text = viewSpot.name;
+    //[NSString stringWithFormat:NSLocalizedString(@"Cell %d",), indexPath.row];
+    cell.subtitleLabel.text = viewSpot.city;// [NSString stringWithFormat:NSLocalizedString(@"This is a parallex cell %d",),indexPath.row];
+    [cell.parallaxImage sd_setImageWithURL:[NSURL URLWithString:viewSpot.image] placeholderImage:[UIImage imageNamed:@"demo_2.jpg"]];
+//    cell.parallaxImage.image = self.tableItems[indexPath.row];
     
     return cell;
 }

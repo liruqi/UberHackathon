@@ -11,7 +11,8 @@
 #import "LZAlbumOperationView.h"
 #import "LZAlbumReplyView.h"
 #import "LZAlbumCreateVC.h"
-#import <NSDate+DateTools.h>
+//#import <NSDate+DateTools.h>
+#import <DateTools/DateTools.h>
 #import "LZAlbumManager.h"
 #import "AVUser+MCCustomUser.h"
 #import <SDWebImage/UIButton+WebCache.h>

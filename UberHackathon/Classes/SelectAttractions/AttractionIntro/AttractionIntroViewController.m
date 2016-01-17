@@ -6,6 +6,7 @@
 //  Copyright © 2016年 微博@iOS程序犭袁. All rights reserved.
 //
 
+#import "UberCell.h"
 #import "AttractionIntroCell.h"
 #import "AttractionIntroViewController.h"
 #import "UINavigationBar+Awesome.h"
@@ -25,6 +26,7 @@
     if (self) {
         _cityName = [NSString string];
         _headerImage = [[UIImage alloc] init];
+        [self.tableView registerClass :[AttractionIntroCell class] forCellReuseIdentifier:@"attractonIntroCell"];
     }
     return self;
 }
@@ -32,7 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.tableView registerClass :[AttractionIntroCell class] forCellReuseIdentifier:@"attractonIntroCell"];
+    
     
     [self.tableView setDataSource:self];
     [self.tableView setDelegate:self];
@@ -46,7 +48,7 @@
     
     [self.tableView setContentInset:UIEdgeInsetsMake(-64, 0, 0, 0)];
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+//    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"attractonIntroCell"];
     [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor blueColor]];
     // Do any additional setup after loading the view from its nib.
 }
@@ -79,10 +81,18 @@
 }
 
 #pragma mark UITableViewDatasource
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    AttractionIntroCell *tempcell = ((AttractionIntroCell *)[tableView cellForRowAtIndexPath:indexPath]);
+//    return tempcell.topLabel.frame.size.height+20+tempcell.textView.frame.size.height;
+    if (!indexPath.row) {
+        return 40;
+    }
+    return 100;
+}
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return @"header";
+    return @"景点介绍";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -97,14 +107,31 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"attractonIntroCell";
-    AttractionIntroCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    if (cell == nil) {
-        cell = [[AttractionIntroCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    if (!indexPath.row) {
+        static NSString *CellIdentifier = @"ubercell";
+        UberCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"UberCell" owner:self options:nil] lastObject];
+        }
+        return cell;
     }
-    [cell.titleLabel setText:@"hahah"];
-    [cell.descriptionTextView setText:@"fsdafjioasjfoidsajfiojdoifjasiodjfiodjfiojsadiofjiosdjfiodsajf"];
-//    cell.textLabel.text = @"text";
+    static NSString *CellIdentifier = @"attractonIntroCell";
+    AttractionIntroCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"AttractionIntroCell" owner:self options:nil] lastObject];
+
+    }
+    
+    switch (indexPath.row) {
+        case 0:
+            [cell.topLabel setText:@"景点名称"];
+            [cell.textView setText:@"222"];
+            break;
+            
+        default:
+            break;
+    }
+    
     return cell;
 }
 

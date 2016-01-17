@@ -82,3 +82,34 @@ strip_invalid_archs() {
   fi
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods/CYLDeallocBlockExecutor.framework"
+  install_framework "Pods/CYLTabBarController.framework"
+  install_framework "Pods/DateTools.framework"
+  install_framework "Pods/FXForms.framework"
+  install_framework "Pods/IQKeyboardManager.framework"
+  install_framework "Pods/JSONModel.framework"
+  install_framework "Pods/LTNavigationBar.framework"
+  install_framework "Pods/MBProgressHUD.framework"
+  install_framework "Pods/MJRefresh.framework"
+  install_framework "Pods/SDWebImage.framework"
+  install_framework "Pods/TTTAttributedLabel.framework"
+  install_framework "Pods/UberRides.framework"
+  install_framework "Pods/XHSetting.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods/CYLDeallocBlockExecutor.framework"
+  install_framework "Pods/CYLTabBarController.framework"
+  install_framework "Pods/DateTools.framework"
+  install_framework "Pods/FXForms.framework"
+  install_framework "Pods/IQKeyboardManager.framework"
+  install_framework "Pods/JSONModel.framework"
+  install_framework "Pods/LTNavigationBar.framework"
+  install_framework "Pods/MBProgressHUD.framework"
+  install_framework "Pods/MJRefresh.framework"
+  install_framework "Pods/SDWebImage.framework"
+  install_framework "Pods/TTTAttributedLabel.framework"
+  install_framework "Pods/UberRides.framework"
+  install_framework "Pods/XHSetting.framework"
+fi

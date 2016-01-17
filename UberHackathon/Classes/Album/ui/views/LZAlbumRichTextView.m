@@ -13,7 +13,8 @@
 #import "LZAlbumCommentTableViewCell.h"
 #import "LZMacros.h"
 #import "XHImageViewer.h"
-#import <NSDate+DateTools.h>
+//#import <NSDate+DateTools.h>
+#import <DateTools/DateTools.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface LZAlbumRichTextView()<UICollectionViewDataSource,UICollectionViewDelegate,MCAlbumLikesCommentsViewDelegate, XHImageViewerDelegate>

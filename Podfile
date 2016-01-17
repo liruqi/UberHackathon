@@ -1,4 +1,5 @@
-platform :ios, '7.0'
+use_frameworks!
+platform :ios, '8.0'
 pod ‘CYLTabBarController’
 pod  'AVOSCloud'
 pod  'AVOSCloudIM'
@@ -13,3 +14,4 @@ pod 'SDWebImage'
 pod 'DateTools'
 pod 'FXForms'
 pod 'LTNavigationBar'
+pod 'UberRides'

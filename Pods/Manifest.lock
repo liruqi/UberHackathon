@@ -4,9 +4,18 @@ PODS:
     - AVOSCloud
   - CYLDeallocBlockExecutor (1.0.0)
   - CYLTabBarController (1.0.5)
+  - DateTools (1.7.0)
+  - FXForms (1.2.14)
   - IQKeyboardManager (3.3.5)
   - JSONModel (1.2.0)
+  - LTNavigationBar (2.1.1)
   - MBProgressHUD (0.9.2)
+  - MJRefresh (3.1.0)
+  - SDWebImage (3.7.4):
+    - SDWebImage/Core (= 3.7.4)
+  - SDWebImage/Core (3.7.4)
+  - TTTAttributedLabel (1.13.4)
+  - UberRides (0.2.0)
   - XHSetting (1.0)
 
 DEPENDENCIES:
@@ -14,9 +23,16 @@ DEPENDENCIES:
   - AVOSCloudIM
   - CYLDeallocBlockExecutor
   - CYLTabBarController
+  - DateTools
+  - FXForms
   - IQKeyboardManager
   - JSONModel
+  - LTNavigationBar
   - MBProgressHUD
+  - MJRefresh
+  - SDWebImage
+  - TTTAttributedLabel
+  - UberRides
   - XHSetting
 
 SPEC CHECKSUMS:
@@ -24,9 +40,16 @@ SPEC CHECKSUMS:
   AVOSCloudIM: 082f0268a22253fd6ad70ec4e4dfd686b36a7308
   CYLDeallocBlockExecutor: 13dc997661100052ed24bb918fcc65e8535af59d
   CYLTabBarController: c758aba2b1aac34be1c217047079ab11b4a18f4a
+  DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
+  FXForms: 724500c0c3f3eb3ba1004b3b83abcee55d3daf18
   IQKeyboardManager: 128bcb96b3ec03ff87942cdd7fa7f44491aa3d08
   JSONModel: 12523685c4b623553ccf844bbbf7007624317b2c
+  LTNavigationBar: b1c15fdcc32453d84f8b9fc774fff611c184dfbb
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
+  SDWebImage: 247edd7dd80dd6124197b0d6a17846fe9d1df968
+  TTTAttributedLabel: 0a2ac7b2dd726d32a070dafb01446026b11e624f
+  UberRides: 3a8966e19c77bcccaca5e9d916089c9263bd6e35
   XHSetting: 8dc92608adcf9453f4bbb334cd10de680387537c
 
 COCOAPODS: 0.39.0

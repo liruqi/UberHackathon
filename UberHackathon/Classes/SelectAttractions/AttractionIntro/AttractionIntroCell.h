@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface AttractionIntroCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet UILabel *topLabel;
 
 @end

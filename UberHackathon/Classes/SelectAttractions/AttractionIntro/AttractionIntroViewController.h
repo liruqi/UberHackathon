@@ -13,4 +13,5 @@
 @property (nonatomic, strong) UIImage *headerImage;
 @property (nonatomic, strong) NSString *cityName;
 
+
 @end

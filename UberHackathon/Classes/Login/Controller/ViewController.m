@@ -50,7 +50,7 @@ const NSString *rightButtonFreeAction = @"signupClick";
 const NSString *rightButtonLoginAction = @"cancelClick";
 const NSString *rightButtonSignupAction = @"cancelClick";
 
-@interface ViewController ()
+@interface ViewController ()<UIWebViewDelegate>
 @property (nonatomic) UILabel *titleLabel;
 @property (nonatomic) UIButton *leftButton;
 @property (nonatomic) UIButton *rightButton;
@@ -195,15 +195,21 @@ const NSString *rightButtonSignupAction = @"cancelClick";
     float screenWidth = self.view.frame.size.width;
     float screenHeight = self.view.frame.size.height;
     UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-    [button setFrame:CGRectMake(0, 0, (screenWidth - 3*BUTTON_PADDING) / 2, 30)];
+    [button setFrame:CGRectMake(0, 0, (screenWidth - 3*BUTTON_PADDING) / 2, 38)];
     [button setCenter:CGPointMake((screenWidth / 4) + (index * screenWidth / 2), screenHeight - 30)];
     [button setTintColor:[UIColor whiteColor]];
     [button setBackgroundColor:[UIColor clearColor]];
     
     button.layer.cornerRadius = BUTTON_CORNER_RADIUS;
-    button.layer.borderWidth = 1.0f;
-    button.layer.borderColor = [[UIColor whiteColor] CGColor];
+//    button.layer.borderWidth = 1.0f;
+//    button.layer.borderColor = [[UIColor whiteColor] CGColor];
     button.clipsToBounds = YES;
+    
+    if ([title isEqualToString:@"Log in"]) {
+        [button setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.2]];
+    } else {
+        [button setBackgroundColor:[UIColor colorWithRed:56.0f/255.0f green:195.0f/255.0f blue:189.0f/255.0f alpha:0.2]];
+    }
     
     [button setTitle:title forState:UIControlStateNormal];
     [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
@@ -373,6 +379,19 @@ const NSString *rightButtonSignupAction = @"cancelClick";
 
 - (void)loginWithUber {
     NSLog(@"Uber Login");
+    UIWebView *webView = [[UIWebView alloc] initWithFrame:self.view.frame];
+    [webView setDelegate:self];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://login.uber.com/oauth/v2/authorize?client_id=Gg8KD0ik3y5JKdRtB4HModzlIJA_hZ0s&response_type=code&redirect_uri=http://baidu.com&state=123"] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:20];
+    [webView loadRequest:request];
+    UIViewController *vc = [[UIViewController alloc] init];
+    [vc.view addSubview:webView];
+    UINavigationController *naviVC = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:naviVC animated:YES completion:nil];
 }
 
+-(void)webViewDidFinishLoad:(UIWebView *)View {
+    NSString *url = View.request.URL.absoluteString;
+    
+    NSLog(@"%@",url);
+}
 @end

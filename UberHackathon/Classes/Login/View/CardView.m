@@ -21,7 +21,7 @@
         for (int i = 0; i < 2; i++) {
             UITextField *field = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 220, 30)];
             field.borderStyle = UITextBorderStyleRoundedRect;
-            field.center = CGPointMake(self.frame.size.width/2.0, 200 + i * 50);
+            field.center = CGPointMake(self.frame.size.width/2.0, 320 + i * 50);
             field.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.6f];
             field.placeholder = i ? @"密码" : @"用户名";
             field.secureTextEntry = i ? YES : NO;

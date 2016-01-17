@@ -6,6 +6,7 @@
 //  Copyright © 2016年 微博@iOS程序犭袁. All rights reserved.
 //
 
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "UberCell.h"
 #import "AttractionIntroCell.h"
 #import "AttractionIntroViewController.h"
@@ -24,8 +25,10 @@
 {
     self = [super init];
     if (self) {
+        self.model = [[UBHViewSpot alloc] init];
         _cityName = [NSString string];
         _headerImage = [[UIImage alloc] init];
+        self.imageURLString = [[NSString alloc] init];
         [self.tableView registerClass :[AttractionIntroCell class] forCellReuseIdentifier:@"attractonIntroCell"];
     }
     return self;
@@ -61,6 +64,9 @@
     
 //    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"attractonIntroCell"];
     [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor blueColor]];
+    
+    
+    [imageView sd_setImageWithURL:self.imageURLString placeholderImage:[UIImage imageNamed:@"demo_2.jpg"]];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -103,7 +109,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return @"Uber";
+    return self.locationName;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

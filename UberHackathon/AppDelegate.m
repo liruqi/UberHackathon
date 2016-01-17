@@ -6,6 +6,8 @@
 //  Copyright © 2015 https://github.com/ChenYilong . All rights reserved.
 //
 
+@import UberRides;
+
 #import "AppDelegate.h"
 #import "CYLTabBarController.h"
 #import "LZAlbumVC.h"
@@ -28,6 +30,9 @@ static NSString *const AVOS_APP_KEY = @"j9de7xoza1gbvkbp0b6qudz10s9lkwsxqll2nvwr
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [[RidesClient sharedInstance] configureClientID:@"Gg8KD0ik3y5JKdRtB4HModzlIJA_hZ0s"];
+    
     //========== AVOS ============
     
     //设置AVOSCloud

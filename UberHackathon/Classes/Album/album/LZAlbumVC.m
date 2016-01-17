@@ -38,6 +38,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.tableView setContentInset:UIEdgeInsetsMake(0, 0, self.tabBarController.tabBar.frame.size.height + 20, 0)];
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.albumReplyView];
     

@@ -27,6 +27,7 @@
 
 #import "UBAttractionsViewController.h"
 #import "CityListViewController.h"
+#import "AttractionIntroViewController.h"
 
 // Table cells
 #import "JBParallaxCell.h"
@@ -40,11 +41,14 @@ static NSString* kCITYNAME = @"kCITYNAME";
 
 @implementation UBAttractionsViewController
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-self.navigationController.navigationBar.frame.size.height) style:UITableViewStylePlain];
-    [self.tableView setContentInset:UIEdgeInsetsMake(0, 0, self.tabBarController.tabBar.frame.size.height+20, 0)];
+        //FIXME:why push then pop inset changed because LTNavigationBar ???
+//    [self.tableView setContentInset:UIEdgeInsetsMake(0, 0, self.tabBarController.tabBar.frame.size.height + 20, 0)];
+
     // Load the items in the table
     self.tableItems = @[[UIImage imageNamed:@"demo_1.jpg"],
                         [UIImage imageNamed:@"demo_2.jpg"],
@@ -112,6 +116,14 @@ static NSString* kCITYNAME = @"kCITYNAME";
     return self.tableItems.count;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    AttractionIntroViewController *attractionIntroVC = [[AttractionIntroViewController alloc] init];
+    [attractionIntroVC setCityName:@""];
+    [attractionIntroVC setHeaderImage:self.tableItems[indexPath.row]];
+    attractionIntroVC.hidesBottomBarWhenPushed = YES;  // This property needs to be set before pushing viewController to the navigationController's stack.
+    [self.navigationController pushViewController:attractionIntroVC animated:YES];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"parallaxCell";
@@ -119,8 +131,6 @@ static NSString* kCITYNAME = @"kCITYNAME";
     if (cell == nil) {
         cell = [[JBParallaxCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    
-    NSLog(@"111");
     
     cell.titleLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Cell %d",), indexPath.row];
     cell.subtitleLabel.text = [NSString stringWithFormat:NSLocalizedString(@"This is a parallex cell %d",),indexPath.row];

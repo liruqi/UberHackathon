@@ -1,0 +1,6 @@
+framework module XHSetting {
+  umbrella header "XHSetting-umbrella.h"
+
+  export *
+  module * { export * }
+}

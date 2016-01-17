@@ -92,7 +92,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return @"景点介绍";
+    return @"Uber";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -113,6 +113,8 @@
         if (cell == nil) {
             cell = [[[NSBundle mainBundle] loadNibNamed:@"UberCell" owner:self options:nil] lastObject];
         }
+        [cell setPickupLongitude:120.112482 latitude:30.246211 nickname:@"灵隐寺"];
+        [cell setDropoffLongitude:120.141377 latitude:30.257793 nickname:@"西湖"];
         return cell;
     }
     static NSString *CellIdentifier = @"attractonIntroCell";

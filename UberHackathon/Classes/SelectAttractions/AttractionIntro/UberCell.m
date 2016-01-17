@@ -6,19 +6,25 @@
 //  Copyright © 2016年 微博@iOS程序犭袁. All rights reserved.
 //
 
-@import UberRides;
+
 #import "UberCell.h"
 
 @implementation UberCell
 
 - (void)awakeFromNib {
     // Initialization code
-    RequestButton *button = [[RequestButton alloc] initWithColorStyle:RequestButtonColorStyleWhite];
+    self.button = [[RequestButton alloc] initWithColorStyle:RequestButtonColorStyleWhite];
+    [self setBackgroundColor:[UIColor colorWithRed:192.0f/255.0f green:192.0f/255.0f blue:200.0f/255.0f alpha:1.0f]];
     
-//    NSLog(@"%f",button.frame.size.height);
-//    [button setCenter:CGPointMake([UIScreen mainScreen].bounds.size.width/2.0f, [UIScreen mainScreen].bounds.size.height/2.0f)];
-    
-    [self addSubview:button];
+    [self addSubview:self.button];
+}
+
+- (void)setDropoffLongitude:(float)longitude latitude:(float)latitude nickname:(NSString *)nickname {
+    [self.button setDropoffLocationWithLatitude:[NSString stringWithFormat:@"%f",latitude] longitude:[NSString stringWithFormat:@"%f", longitude] nickname:nickname address:nil];
+}
+
+- (void)setPickupLongitude:(float)longitude latitude:(float)latitude nickname:(NSString *)nickname {
+    [self.button setPickupLocationWithLatitude:[NSString stringWithFormat:@"%f",latitude] longitude:[NSString stringWithFormat:@"%f", longitude] nickname:nickname address:nil];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

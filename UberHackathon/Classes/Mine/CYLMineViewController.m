@@ -33,9 +33,12 @@
 #import <AVOSCloud/AVUser.h>
 #import "ViewController.h"
 #import "AppDelegate.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "AVUser+MCCustomUser.h"
 
 @interface CYLMineViewController()
 @property (nonatomic, copy) NSArray *setting;
+@property (nonatomic, strong) UIImagePickerController *imagePickerController;
 
 @end
 @implementation CYLMineViewController
@@ -43,7 +46,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-//        self.title = @"我的";
+        //        self.title = @"我的";
     }
     return self;
 }
@@ -95,9 +98,9 @@
 //    if (!cell) {
 //        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
 //    }
-//    
+//
 //    [self configureCell:cell forIndexPath:indexPath];
-//    
+//
 //    return cell;
 //}
 //
@@ -119,17 +122,17 @@
 }
 
 - (void)_loadLoginViewControllers {
-        NSMutableArray *setting = [[NSMutableArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Settings" ofType:@"plist"]];
-            self.setting = setting;
-            NSLog(@"🔴类名与方法名：%@（在第%@行），描述：%@", @(__PRETTY_FUNCTION__), @(__LINE__), self.setting);
-            [self.tableView reloadData];
+    NSMutableArray *setting = [[NSMutableArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Settings" ofType:@"plist"]];
+    self.setting = setting;
+    NSLog(@"🔴类名与方法名：%@（在第%@行），描述：%@", @(__PRETTY_FUNCTION__), @(__LINE__), self.setting);
+    [self.tableView reloadData];
 }
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self _loadLoginViewControllers];
     NSLog(@"🔴类名与方法名：%@（在第%@行），描述：%@", @(__PRETTY_FUNCTION__), @(__LINE__), self.setting);
-    NSDictionary *settingDictionary = self.setting[0];
+    NSDictionary *settingDictionary = self.setting[1];
     
     self.settingDictionary = settingDictionary;
     self.title = [settingDictionary valueForKey:XHKControllerTitleKey];
@@ -171,20 +174,26 @@
                                             
                                             
                                             cell.textLabel.text = text;
-                                            
+                                            AVUser *currentUser = [AVUser currentUser];
+
                                             NSString *userAvatarImageName = [rowDictionary valueForKey:XHKUserAvatarImageNameKey];
                                             if (userAvatarImageName) {
-                                                cell.imageView.image = [UIImage imageNamed:userAvatarImageName];
+                                                AVFile *avatar = [currentUser objectForKey:KEY_AVATAR];
+                                                
+                                                [cell.imageView sd_setImageWithURL:[NSURL URLWithString:avatar.url] placeholderImage:[UIImage imageNamed:@"avator"]];
+                                            }
+                                            if ([text isEqualToString:@"UserName"]) {
+                                                cell.textLabel.text = currentUser.username;
                                             }
                                             
                                             for (NSString *rowKey in rowDictionary) {
                                                 if ([rowKey isEqualToString:XHKAccessoryViewTextKey]) {
                                                     NSString *accessoryViewText = [rowDictionary valueForKey:rowKey];
-//                                                    if (accessoryViewText) {
-//                                                        XHBadgeLabel *badgeLabel = [[XHBadgeLabel alloc] initWithFrame:CGRectZero];
-//                                                        badgeLabel.text = accessoryViewText;
-//                                                        cell.accessoryView = badgeLabel;
-//                                                    }
+                                                    //                                                    if (accessoryViewText) {
+                                                    //                                                        XHBadgeLabel *badgeLabel = [[XHBadgeLabel alloc] initWithFrame:CGRectZero];
+                                                    //                                                        badgeLabel.text = accessoryViewText;
+                                                    //                                                        cell.accessoryView = badgeLabel;
+                                                    //                                                    }
                                                 }
                                             }
                                             
@@ -201,9 +210,9 @@
                                                 if ([rowKey isEqualToString:XHKTextKey]) {
                                                     NSString *text = [rowDictionary valueForKey:rowKey];
                                                     if ([text isEqualToString:XHKWifiKey]) {
-//                                                        [safeSelf.navigationController pushViewController:[[WifiViewController alloc] init] animated:YES];
+                                                        //                                                        [safeSelf.navigationController pushViewController:[[WifiViewController alloc] init] animated:YES];
                                                     } else if ([text isEqualToString:XHKNotificationsKey]) {
-//                                                        [safeSelf.navigationController pushViewController:[[NotificationsViewController alloc] init] animated:YES];
+                                                        //                                                        [safeSelf.navigationController pushViewController:[[NotificationsViewController alloc] init] animated:YES];
                                                     }
                                                 }
                                             }
@@ -253,5 +262,100 @@
     UITabBarController *tabbarController = (UITabBarController *)window.rootViewController;
     window.rootViewController = tabbarController;
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0 ) {
+        if (indexPath.row == 0) {
+            UIAlertControllerStyle style = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)? UIAlertControllerStyleAlert: UIAlertControllerStyleActionSheet;
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:style];
+            
+            [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Take Photo", nil) style:UIAlertActionStyleDefault handler:^(__unused UIAlertAction *action) {
+                [self actionSheet:nil didDismissWithButtonIndex:0];
+            }]];
+            
+            [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Photo Library", nil) style:UIAlertActionStyleDefault handler:^(__unused UIAlertAction *action) {
+                [self actionSheet:nil didDismissWithButtonIndex:1];
+            }]];
+            
+            [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:NULL]];
+            
+            [self presentViewController:alert animated:YES completion:NULL];
+        }
+    }
+}
+
+//- (void)xdd {
+//    NSMutableArray *photoFiles = [NSMutableArray array];
+//    NSError *theError;
+//    for (UIImage *photo in photos) {
+//        AVFile *photoFile = [AVFile fileWithData:UIImageJPEGRepresentation(photo, 0.6)];
+//        [photoFile save:&theError];
+//        if (theError) {
+//            *error = theError;
+//            return;
+//        }
+//        [photoFiles addObject:photoFile];
+//    }
+//}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    AVUser *currentUser = [AVUser currentUser];
+    UIImage *image = info[UIImagePickerControllerEditedImage] ?: info[UIImagePickerControllerOriginalImage];
+    AVFile *photoFile = [AVFile fileWithData:UIImageJPEGRepresentation(image, 0.6)];
+    [photoFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            currentUser.avatar = photoFile;
+            [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                [self.tableView reloadData];
+            }];
+        }
+    }];
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void)actionSheet:(__unused UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    switch (buttonIndex)
+    {
+        case 0:
+        {
+            sourceType = UIImagePickerControllerSourceTypeCamera;
+            break;
+        }
+        case 1:
+        {
+            sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            break;
+        }
+        default:
+        {
+            return;
+        }
+    }
+    if ([UIImagePickerController isSourceTypeAvailable:sourceType])
+    {
+        self.imagePickerController.sourceType = sourceType;
+        [self presentViewController:self.imagePickerController animated:YES completion:nil];
+    }
+}
+
+- (UIImagePickerController *)imagePickerController
+{
+    if (!_imagePickerController)
+    {
+        _imagePickerController = [[UIImagePickerController alloc] init];
+        _imagePickerController.delegate = self;
+        _imagePickerController.allowsEditing = YES;
+    }
+    return _imagePickerController;
+}
+
 
 @end

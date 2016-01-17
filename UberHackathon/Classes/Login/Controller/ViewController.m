@@ -117,6 +117,7 @@ const NSString *rightButtonSignupAction = @"cancelClick";
     }
     return _playerView;
 }
+
 - (void)createVideoPlayer {
     
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"welcome_video" ofType:@"m4v"];

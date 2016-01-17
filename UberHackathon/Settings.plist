@@ -59,7 +59,7 @@
 				<array>
 					<dict>
 						<key>Text</key>
-						<string>Jack</string>
+						<string>UserName</string>
 						<key>userAvatarImageName</key>
 						<string>meicon.png</string>
 						<key>Switch</key>

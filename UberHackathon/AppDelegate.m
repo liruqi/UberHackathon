@@ -131,6 +131,9 @@ static NSString *const AVOS_APP_KEY = @"j9de7xoza1gbvkbp0b6qudz10s9lkwsxqll2nvwr
  *  设置navigationBar样式
  */
 - (void)setUpNavigationBarAppearance {
+
+    
+    
 //    [[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
     UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
     
@@ -160,6 +163,11 @@ static NSString *const AVOS_APP_KEY = @"j9de7xoza1gbvkbp0b6qudz10s9lkwsxqll2nvwr
     [navigationBarAppearance setBackgroundImage:backgroundImage
                                   forBarMetrics:UIBarMetricsDefault];
     [navigationBarAppearance setTitleTextAttributes:textAttributes];
+    if ([UINavigationBar conformsToProtocol:@protocol(UIAppearanceContainer)]) {
+        [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont boldSystemFontOfSize:18], NSForegroundColorAttributeName : [UIColor whiteColor]}];
+        [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:(51) / 255.f green:(171) / 255.f blue:(160) / 255.f alpha:1.f]];
+        [[UINavigationBar appearance] setTranslucent:NO];
+    }
 }
 
 /**

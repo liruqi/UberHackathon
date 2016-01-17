@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UberHackathon/Classes/SelectAttractions/Attractions/UBAttractionsViewController.m"
-            timestampString = "474703430.902772"
+            timestampString = "474716280.13153"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
             landmarkName = "-queryCityWithName:"
             landmarkType = "5">
          </BreakpointContent>

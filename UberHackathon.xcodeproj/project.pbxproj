@@ -95,6 +95,22 @@
 		9AECA6461C4ABB310079C93E /* XHPhotographyHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AECA6171C4ABB310079C93E /* XHPhotographyHelper.m */; };
 		9AECA6481C4AC3FC0079C93E /* avator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AECA6471C4AC3FC0079C93E /* avator@2x.png */; };
 		9AECA64A1C4AC5050079C93E /* image_placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AECA6491C4AC5050079C93E /* image_placeholder@2x.png */; };
+		9AFA23F61C4B7EC900D59392 /* CYLMultipleFilterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFA23E31C4B7EC900D59392 /* CYLMultipleFilterController.m */; };
+		9AFA23F71C4B7EC900D59392 /* FilterBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFA23E51C4B7EC900D59392 /* FilterBaseController.m */; };
+		9AFA23F81C4B7EC900D59392 /* FilterBaseController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AFA23E61C4B7EC900D59392 /* FilterBaseController.xib */; };
+		9AFA23F91C4B7EC900D59392 /* UIImage+Blur.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFA23EA1C4B7EC900D59392 /* UIImage+Blur.m */; };
+		9AFA23FA1C4B7EC900D59392 /* UIView+General.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFA23EC1C4B7EC900D59392 /* UIView+General.m */; };
+		9AFA23FB1C4B7EC900D59392 /* CYLFilterParamsTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFA23EF1C4B7EC900D59392 /* CYLFilterParamsTool.m */; };
+		9AFA23FC1C4B7EC900D59392 /* CYLMultipleFilterHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFA23F21C4B7EC900D59392 /* CYLMultipleFilterHeaderView.m */; };
+		9AFA23FD1C4B7EC900D59392 /* CYLMultipleFilterHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AFA23F31C4B7EC900D59392 /* CYLMultipleFilterHeaderView.xib */; };
+		9AFA23FE1C4B7EC900D59392 /* FilterCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFA23F51C4B7EC900D59392 /* FilterCollectionCell.m */; };
+		9AFA24001C4B7EDB00D59392 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9AFA23FF1C4B7EDB00D59392 /* data.json */; };
+		9AFA24061C4B810700D59392 /* CYLDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFA24051C4B810700D59392 /* CYLDBManager.m */; };
+		9AFA24091C4B814800D59392 /* CYLIndexPathButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFA24081C4B814800D59392 /* CYLIndexPathButton.m */; };
+		9AFA240D1C4B90E500D59392 /* MyTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFA240C1C4B90E500D59392 /* MyTripViewController.m */; };
+		9AFA24101C4B913E00D59392 /* TripCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AFA240F1C4B913E00D59392 /* TripCell.m */; };
+		9AFA24141C4B921800D59392 /* TripCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AFA24131C4B921800D59392 /* TripCell.xib */; };
+		9AFA24161C4B99CF00D59392 /* 行程.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AFA24151C4B99CF00D59392 /* 行程.png */; };
 		B1A15F2B1C4B416A00C77F99 /* AttractionIntroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A15F291C4B416A00C77F99 /* AttractionIntroCell.m */; };
 		B1A15F2C1C4B416A00C77F99 /* AttractionIntroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1A15F2A1C4B416A00C77F99 /* AttractionIntroCell.xib */; };
 		B1A15F3C1C4B48FB00C77F99 /* UberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A15F3B1C4B48FB00C77F99 /* UberCell.m */; };
@@ -242,6 +258,34 @@
 		9AECA6171C4ABB310079C93E /* XHPhotographyHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHPhotographyHelper.m; sourceTree = "<group>"; };
 		9AECA6471C4AC3FC0079C93E /* avator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avator@2x.png"; sourceTree = "<group>"; };
 		9AECA6491C4AC5050079C93E /* image_placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image_placeholder@2x.png"; sourceTree = "<group>"; };
+		9AFA23E21C4B7EC900D59392 /* CYLMultipleFilterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLMultipleFilterController.h; sourceTree = "<group>"; };
+		9AFA23E31C4B7EC900D59392 /* CYLMultipleFilterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLMultipleFilterController.m; sourceTree = "<group>"; };
+		9AFA23E41C4B7EC900D59392 /* FilterBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterBaseController.h; sourceTree = "<group>"; };
+		9AFA23E51C4B7EC900D59392 /* FilterBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterBaseController.m; sourceTree = "<group>"; };
+		9AFA23E61C4B7EC900D59392 /* FilterBaseController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterBaseController.xib; sourceTree = "<group>"; };
+		9AFA23E91C4B7EC900D59392 /* UIImage+Blur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Blur.h"; sourceTree = "<group>"; };
+		9AFA23EA1C4B7EC900D59392 /* UIImage+Blur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Blur.m"; sourceTree = "<group>"; };
+		9AFA23EB1C4B7EC900D59392 /* UIView+General.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+General.h"; sourceTree = "<group>"; };
+		9AFA23EC1C4B7EC900D59392 /* UIView+General.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+General.m"; sourceTree = "<group>"; };
+		9AFA23EE1C4B7EC900D59392 /* CYLFilterParamsTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLFilterParamsTool.h; sourceTree = "<group>"; };
+		9AFA23EF1C4B7EC900D59392 /* CYLFilterParamsTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLFilterParamsTool.m; sourceTree = "<group>"; };
+		9AFA23F11C4B7EC900D59392 /* CYLMultipleFilterHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLMultipleFilterHeaderView.h; sourceTree = "<group>"; };
+		9AFA23F21C4B7EC900D59392 /* CYLMultipleFilterHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLMultipleFilterHeaderView.m; sourceTree = "<group>"; };
+		9AFA23F31C4B7EC900D59392 /* CYLMultipleFilterHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CYLMultipleFilterHeaderView.xib; sourceTree = "<group>"; };
+		9AFA23F41C4B7EC900D59392 /* FilterCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterCollectionCell.h; sourceTree = "<group>"; };
+		9AFA23F51C4B7EC900D59392 /* FilterCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterCollectionCell.m; sourceTree = "<group>"; };
+		9AFA23FF1C4B7EDB00D59392 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		9AFA24041C4B810700D59392 /* CYLDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLDBManager.h; sourceTree = "<group>"; };
+		9AFA24051C4B810700D59392 /* CYLDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLDBManager.m; sourceTree = "<group>"; };
+		9AFA24071C4B814800D59392 /* CYLIndexPathButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLIndexPathButton.h; sourceTree = "<group>"; };
+		9AFA24081C4B814800D59392 /* CYLIndexPathButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLIndexPathButton.m; sourceTree = "<group>"; };
+		9AFA240A1C4B82BC00D59392 /* CYLParameterConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLParameterConfiguration.h; sourceTree = "<group>"; };
+		9AFA240B1C4B90E500D59392 /* MyTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTripViewController.h; sourceTree = "<group>"; };
+		9AFA240C1C4B90E500D59392 /* MyTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTripViewController.m; sourceTree = "<group>"; };
+		9AFA240E1C4B913E00D59392 /* TripCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripCell.h; sourceTree = "<group>"; };
+		9AFA240F1C4B913E00D59392 /* TripCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripCell.m; sourceTree = "<group>"; };
+		9AFA24131C4B921800D59392 /* TripCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TripCell.xib; sourceTree = "<group>"; };
+		9AFA24151C4B99CF00D59392 /* 行程.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "行程.png"; sourceTree = "<group>"; };
 		B1A15F281C4B416A00C77F99 /* AttractionIntroCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttractionIntroCell.h; sourceTree = "<group>"; };
 		B1A15F291C4B416A00C77F99 /* AttractionIntroCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttractionIntroCell.m; sourceTree = "<group>"; };
 		B1A15F2A1C4B416A00C77F99 /* AttractionIntroCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttractionIntroCell.xib; sourceTree = "<group>"; };
@@ -310,6 +354,12 @@
 			children = (
 				9A779D2C1C4A25070030B002 /* Classes */,
 				9A779D261C4A25070030B002 /* AppDelegate.h */,
+				9AFA240B1C4B90E500D59392 /* MyTripViewController.h */,
+				9AFA240C1C4B90E500D59392 /* MyTripViewController.m */,
+				9AFA24151C4B99CF00D59392 /* 行程.png */,
+				9AFA240E1C4B913E00D59392 /* TripCell.h */,
+				9AFA240F1C4B913E00D59392 /* TripCell.m */,
+				9AFA24131C4B921800D59392 /* TripCell.xib */,
 				9A779D271C4A25070030B002 /* AppDelegate.m */,
 				9A779D281C4A25070030B002 /* LaunchScreen.xib */,
 				9A779D2A1C4A25070030B002 /* Main.storyboard */,
@@ -342,6 +392,10 @@
 		9A779D2D1C4A25070030B002 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				9AFA24071C4B814800D59392 /* CYLIndexPathButton.h */,
+				9AFA24081C4B814800D59392 /* CYLIndexPathButton.m */,
+				9AFA24041C4B810700D59392 /* CYLDBManager.h */,
+				9AFA24051C4B810700D59392 /* CYLDBManager.m */,
 				9A779D2E1C4A25070030B002 /* CYLHomeViewController.h */,
 				9A779D2F1C4A25070030B002 /* CYLHomeViewController.m */,
 			);
@@ -485,6 +539,9 @@
 		9AECA5361C4A8C510079C93E /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				9AFA240A1C4B82BC00D59392 /* CYLParameterConfiguration.h */,
+				9AFA23FF1C4B7EDB00D59392 /* data.json */,
+				9AFA23E01C4B7EC900D59392 /* MultipleFilter */,
 				9AECA5B71C4AB06F0079C93E /* welcome_video.m4v */,
 				9AECA5371C4A8C700079C93E /* Category */,
 			);
@@ -712,6 +769,69 @@
 			path = XHPhotographyHelper;
 			sourceTree = "<group>";
 		};
+		9AFA23E01C4B7EC900D59392 /* MultipleFilter */ = {
+			isa = PBXGroup;
+			children = (
+				9AFA23E11C4B7EC900D59392 /* Controller */,
+				9AFA23E71C4B7EC900D59392 /* Other */,
+				9AFA23F01C4B7EC900D59392 /* View */,
+			);
+			path = MultipleFilter;
+			sourceTree = "<group>";
+		};
+		9AFA23E11C4B7EC900D59392 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9AFA23E21C4B7EC900D59392 /* CYLMultipleFilterController.h */,
+				9AFA23E31C4B7EC900D59392 /* CYLMultipleFilterController.m */,
+				9AFA23E41C4B7EC900D59392 /* FilterBaseController.h */,
+				9AFA23E51C4B7EC900D59392 /* FilterBaseController.m */,
+				9AFA23E61C4B7EC900D59392 /* FilterBaseController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9AFA23E71C4B7EC900D59392 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				9AFA23E81C4B7EC900D59392 /* Category */,
+				9AFA23ED1C4B7EC900D59392 /* Tool */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		9AFA23E81C4B7EC900D59392 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				9AFA23E91C4B7EC900D59392 /* UIImage+Blur.h */,
+				9AFA23EA1C4B7EC900D59392 /* UIImage+Blur.m */,
+				9AFA23EB1C4B7EC900D59392 /* UIView+General.h */,
+				9AFA23EC1C4B7EC900D59392 /* UIView+General.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		9AFA23ED1C4B7EC900D59392 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				9AFA23EE1C4B7EC900D59392 /* CYLFilterParamsTool.h */,
+				9AFA23EF1C4B7EC900D59392 /* CYLFilterParamsTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		9AFA23F01C4B7EC900D59392 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9AFA23F11C4B7EC900D59392 /* CYLMultipleFilterHeaderView.h */,
+				9AFA23F21C4B7EC900D59392 /* CYLMultipleFilterHeaderView.m */,
+				9AFA23F31C4B7EC900D59392 /* CYLMultipleFilterHeaderView.xib */,
+				9AFA23F41C4B7EC900D59392 /* FilterCollectionCell.h */,
+				9AFA23F51C4B7EC900D59392 /* FilterCollectionCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F64EB5C0CB8A346C26B2C764 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -755,7 +875,7 @@
 				TargetAttributes = {
 					9A77A2E41BDCC144009CD1A4 = {
 						CreatedOnToolsVersion = 6.3;
-						DevelopmentTeam = 6278Q96CU6;
+						DevelopmentTeam = Y6X8P44TM5;
 					};
 				};
 			};
@@ -786,6 +906,7 @@
 				9AECA63B1C4ABB310079C93E /* circle.png in Resources */,
 				9AECA61C1C4ABB310079C93E /* Album_like_icon@2x.png in Resources */,
 				9AECA5321C4A80330079C93E /* demo_3.jpg in Resources */,
+				9AFA23F81C4B7EC900D59392 /* FilterBaseController.xib in Resources */,
 				9AECA5141C4A55C90079C93E /* citydict.plist in Resources */,
 				9AECA6241C4ABB310079C93E /* AlbumOperateMore@2x.png in Resources */,
 				9A779D4C1C4A25070030B002 /* Info.plist in Resources */,
@@ -798,6 +919,7 @@
 				9AECA5301C4A80330079C93E /* demo_1.jpg in Resources */,
 				9AECA6221C4ABB310079C93E /* AlbumInformationLikeHL@2x.png in Resources */,
 				9AECA5181C4A55C90079C93E /* CityListViewController.xib in Resources */,
+				9AFA24001C4B7EDB00D59392 /* data.json in Resources */,
 				9AECA61F1C4ABB310079C93E /* AlbumAddBtnHL@2x.png in Resources */,
 				B1A15F2C1C4B416A00C77F99 /* AttractionIntroCell.xib in Resources */,
 				9AECA51A1C4A55C90079C93E /* CitySelectTableViewController.xib in Resources */,
@@ -805,12 +927,15 @@
 				9AECA6231C4ABB310079C93E /* AlbumInformationLikeHL@3x.png in Resources */,
 				9AECA6191C4ABB310079C93E /* LZAlbumCreateVC.xib in Resources */,
 				9AECA5311C4A80330079C93E /* demo_2.jpg in Resources */,
+				9AFA24161C4B99CF00D59392 /* 行程.png in Resources */,
 				9AECA6211C4ABB310079C93E /* AlbumHeaderBackgrounImage@2x.png in Resources */,
 				9AECA51C1C4A55C90079C93E /* HotCityTableViewCell.xib in Resources */,
 				9AECA61E1C4ABB310079C93E /* AlbumAddBtn@2x.png in Resources */,
 				9AECA61B1C4ABB310079C93E /* album_add_photo@2x.png in Resources */,
+				9AFA23FD1C4B7EC900D59392 /* CYLMultipleFilterHeaderView.xib in Resources */,
 				9AECA5B81C4AB06F0079C93E /* welcome_video.m4v in Resources */,
 				9AECA63E1C4ABB310079C93E /* MenuBackground@2x.png in Resources */,
+				9AFA24141C4B921800D59392 /* TripCell.xib in Resources */,
 				9AECA5161C4A55C90079C93E /* citydictionary.plist in Resources */,
 				9AECA63D1C4ABB310079C93E /* meicon.png in Resources */,
 				9AECA64A1C4AC5050079C93E /* image_placeholder@2x.png in Resources */,
@@ -898,22 +1023,31 @@
 				9AECA53D1C4A8D280079C93E /* MBProgressHUD+CYLAddition.m in Sources */,
 				9A2F09E81C4B186D001EBF1C /* AttractionIntroViewController.m in Sources */,
 				9AECA5351C4A80330079C93E /* UBAttractionsViewController.m in Sources */,
+				9AFA23F91C4B7EC900D59392 /* UIImage+Blur.m in Sources */,
 				9AECA5021C4A3FEB0079C93E /* CardView.m in Sources */,
 				9AECA6351C4ABB310079C93E /* LZAlbumOperationView.m in Sources */,
+				9AFA240D1C4B90E500D59392 /* MyTripViewController.m in Sources */,
 				9AECA62C1C4ABB310079C93E /* LZRegisterForm.m in Sources */,
+				9AFA23FC1C4B7EC900D59392 /* CYLMultipleFilterHeaderView.m in Sources */,
 				9A779D481C4A25070030B002 /* CYLMineViewController.m in Sources */,
+				9AFA24061C4B810700D59392 /* CYLDBManager.m in Sources */,
 				9AECA6421C4ABB310079C93E /* XHWaterDropRefresh.m in Sources */,
 				9AECA5AB1C4A910E0079C93E /* MBProgressHUD+KK.m in Sources */,
 				9AECA62A1C4ABB310079C93E /* LZEntryForm.m in Sources */,
+				9AFA24101C4B913E00D59392 /* TripCell.m in Sources */,
 				9AECA62B1C4ABB310079C93E /* LZLoginForm.m in Sources */,
 				9AECA6381C4ABB310079C93E /* LZAlbumRichTextView.m in Sources */,
 				9A779D491C4A25070030B002 /* CYLDetailsViewController.m in Sources */,
 				9AECA6321C4ABB310079C93E /* LZAlbumCollectionFlowLayout.m in Sources */,
 				9AECA6311C4ABB310079C93E /* LZEntryFormController.m in Sources */,
+				9AFA23FE1C4B7EC900D59392 /* FilterCollectionCell.m in Sources */,
 				9AECA6301C4ABB310079C93E /* LZBaseVC.m in Sources */,
 				9AECA6181C4ABB310079C93E /* LZAlbumCreateVC.m in Sources */,
 				9AECA6271C4ABB310079C93E /* AVUser+MCCustomUser.m in Sources */,
+				9AFA23FB1C4B7EC900D59392 /* CYLFilterParamsTool.m in Sources */,
 				9AECA6291C4ABB310079C93E /* LZComment.m in Sources */,
+				9AFA23F71C4B7EC900D59392 /* FilterBaseController.m in Sources */,
+				9AFA23F61C4B7EC900D59392 /* CYLMultipleFilterController.m in Sources */,
 				9AECA6371C4ABB310079C93E /* LZAlbumReplyView.m in Sources */,
 				9AECA5191C4A55C90079C93E /* CitySelectTableViewController.m in Sources */,
 				9AECA6461C4ABB310079C93E /* XHPhotographyHelper.m in Sources */,
@@ -924,10 +1058,12 @@
 				9A779D4A1C4A25070030B002 /* CYLSameFityViewController.m in Sources */,
 				550FC7391C4A7B6C00AB8A31 /* UBHViewSpot.m in Sources */,
 				9A779D451C4A25070030B002 /* CYLHomeViewController.m in Sources */,
+				9AFA24091C4B814800D59392 /* CYLIndexPathButton.m in Sources */,
 				9AECA6411C4ABB310079C93E /* XHSoundManager.m in Sources */,
 				9AECA6431C4ABB310079C93E /* XHImageViewer.m in Sources */,
 				9AECA62E1C4ABB310079C93E /* LZAlbumComment.m in Sources */,
 				9A779D4D1C4A25070030B002 /* main.m in Sources */,
+				9AFA23FA1C4B7EC900D59392 /* UIView+General.m in Sources */,
 				9AECA6361C4ABB310079C93E /* LZAlbumPhotoCollectionViewCell.m in Sources */,
 				9A779D421C4A25070030B002 /* AppDelegate.m in Sources */,
 			);

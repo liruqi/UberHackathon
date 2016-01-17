@@ -70,15 +70,25 @@ const NSString *rightButtonSignupAction = @"cancelClick";
     [super viewDidLoad];
     self.status = freeStatus;
     [self createVideoPlayer];
+    [self createShowAnim];
+    [self addMask];
+    [self addCardView];
     [self createTitleLabel];
     [self createTwoButton];
-    [self createShowAnim];
-    [self addCardView];
+    
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillChangeFrame:)
                                                  name:UIKeyboardWillChangeFrameNotification
                                                object:nil
      ];
+}
+
+- (void)addMask {
+    UIView *maskView = [[UIView alloc] initWithFrame:self.view.frame];
+//    [maskView setAlpha:0.35f];
+    [maskView setBackgroundColor:[UIColor colorWithRed:8.0f/255.0f green:61.0f/255.0f blue:81.0f/255.0f alpha:0.35f]];
+    [self.view addSubview:maskView];
 }
 
 - (void)createShowAnim {

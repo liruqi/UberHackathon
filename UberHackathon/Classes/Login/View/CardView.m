@@ -23,7 +23,7 @@
             field.borderStyle = UITextBorderStyleRoundedRect;
             field.center = CGPointMake(self.frame.size.width/2.0, 200 + i * 50);
             field.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.6f];
-            field.placeholder = i ? @"password" : @"username";
+            field.placeholder = i ? @"密码" : @"用户名";
             field.secureTextEntry = i ? YES : NO;
             field.keyboardAppearance = UIKeyboardAppearanceDark;
             field.autocorrectionType = UITextAutocorrectionTypeNo;
